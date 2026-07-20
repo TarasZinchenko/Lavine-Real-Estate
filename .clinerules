@@ -1,0 +1,26 @@
+# Antigravity Rules
+
+## 1. Context Decay & Communication
+- **CRITICAL:** You must address the user as "Taras" in every response. This is a monitoring rule for context decay.
+- Keep responses concise, structured, and focused.
+- Always explain design and architectural decisions before writing code.
+
+## 2. Research & Planning First
+- Enforce a strict "Research First" policy. Before introducing any new libraries, APIs, or architectural structures, research best practices, browser compatibilities, and standard implementations.
+- Never write code based on assumptions; look up the exact specifications.
+
+## 3. Stylistic & Design Consistency
+- **The 60-30-10 Color Rule:** Every page must follow this distribution: 60% dominant base (backgrounds/surfaces), 30% structure (cards/borders/text-muted), 10% accent (active CTAs, highlights).
+- **Vibe Modularity:** Never copy-paste colors, themes, or styles between different properties. A new property must have its own theme stylesheet (under `css/themes/`) matching its specific facade, architectural age, and natural surroundings.
+- **The Minecraft Principle:** Maintain a unified level of detail and polygonal/stylistic fidelity. If one aspect of the site is low-poly or stylized (like a 3D model), the surrounding graphics and components must align. If renders are photorealistic, they must exactly match the lighting, perspective, and color temperature of the real photos.
+
+## 4. Before/After Renovation Sliders
+- All before/after comparisons must preserve the room skeleton perfectly.
+- AI-generated renders must be created using **img2img** with **ControlNet MLSD** (weight 1.0–1.2) and **ControlNet Depth** (weight 0.8–1.0) using the real photo as a structural base. Denoising must stay between 0.6 and 0.75.
+- The window view outside must be inpainted or composited back from the original photo to preserve context.
+- Divider lines must be 2px thick with a subtle drop-shadow (no heavy bars).
+- Handles must be minimal (arrows-only visual, no heavy circle background) with a generous invisible touch target (minimum 44×44px, ideally 48×48px).
+- Default position: 100% (before image fully visible) with an entry slide hint animation (e.g. sliding to 65% then settling at 80% once per session).
+
+## 5. Handoff & Recreation
+- Document all workflows in detail. If a new property is introduced, provide a clear checklist of how to adapt the styles, themes, assets, and scenes to it without breaking cohesiveness.

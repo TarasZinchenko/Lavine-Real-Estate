@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Papa Realtor — Выбор объекта</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --clr-bg: #0D0E10;
+      --clr-text: #F3F4F6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: 'Montserrat', sans-serif; 
+      background: var(--clr-bg); 
+      color: var(--clr-text); 
+      height: 100vh; 
+      overflow: hidden; 
+      display: flex; 
+      flex-direction: column; 
+    }
+    
+    .header { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      z-index: 10; 
+      padding: 32px 24px; 
+      text-align: center; 
+    }
+    .header h1 { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 1.2rem; 
+      letter-spacing: 0.2em; 
+      font-weight: 400; 
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .split-container { 
+      display: flex; 
+      flex-direction: column; 
+      height: 100vh; 
+      width: 100%; 
+    }
+    
+    .split { 
+      position: relative; 
+      flex: 1; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      overflow: hidden; 
+      cursor: pointer; 
+      transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+      text-decoration: none; 
+      color: var(--clr-text); 
+    }
+    
+    .split::before { 
+      content: ''; 
+      position: absolute; 
+      inset: 0; 
+      background-size: cover; 
+      background-position: center; 
+      transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1); 
+    }
+    .split.skazka::before { background-image: url('assets/skazka/exterior_1.webp'); }
+    .split.manufactura::before { background-image: url('assets/manufactura/exterior.webp'); }
+    
+    .overlay { 
+      position: absolute; 
+      inset: 0; 
+      background: rgba(13, 14, 16, 0.65); 
+      transition: background 0.6s; 
+    }
+    
+    .content { 
+      position: relative; 
+      z-index: 2; 
+      text-align: center; 
+      padding: 2rem; 
+      transform: translateY(15px); 
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+    }
+    .content h2 { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 2.5rem; 
+      margin-bottom: 0.5rem; 
+      font-style: italic; 
+      font-weight: 400;
+    }
+    .content p { 
+      font-size: 0.8rem; 
+      letter-spacing: 0.1em; 
+      text-transform: uppercase; 
+      color: rgba(255,255,255,0.7); 
+    }
+    
+    @media (min-width: 768px) {
+      .split-container { flex-direction: row; }
+      .content { transform: translateY(20px); }
+      .split:hover { flex: 1.25; }
+      .split:hover::before { transform: scale(1.05); }
+      .split:hover .overlay { background: rgba(13, 14, 16, 0.3); }
+      .split:hover .content { transform: translateY(0); }
+    }
+    
+    /* Subtle pulsing hint on mobile */
+    @media (max-width: 767px) {
+      .split { padding-top: 40px; }
+      .split:active .overlay { background: rgba(13, 14, 16, 0.4); }
+    }
+    
+    .admin-link { 
+      position: absolute; 
+      bottom: 20px; 
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10; 
+      font-size: 0.7rem; 
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3); 
+      text-decoration: none; 
+      transition: color 0.3s;
+    }
+    .admin-link:hover { color: #fff; }
+  </style>
+
+  <link rel='icon' type='image/svg+xml' href='assets/shared/favicon.svg'>
+  <meta property='og:title' content='Papa Realtor � ???????????? ????????'>
+  <meta property='og:description' content='??????? ???????????? ? ???????? ? ???????? ? ?? ????????.'>
+  <meta property='og:image' content='assets/shared/og-image.webp'>
+  <meta property='og:type' content='website'>
+  <meta name='twitter:card' content='summary_large_image'>
+</head>
+<body>
+  <header class="header">
+    <h1>Papa Realtor</h1>
+  </header>
+  
+  <div class="split-container">
+    <a href="skazka.html" class="split skazka">
+      <div class="overlay"></div>
+      <div class="content">
+        <h2>ЖК Сказка</h2>
+        <p>Современный комфорт</p>
+      </div>
+    </a>
+    
+    <a href="manufactura.html" class="split manufactura">
+      <div class="overlay"></div>
+      <div class="content">
+        <h2>Manufactura</h2>
+        <p>Индустриальный лофт</p>
+      </div>
+    </a>
+  </div>
+
+  <a href="admin.html" class="admin-link">Панель управления</a>
+</body>
+</html>

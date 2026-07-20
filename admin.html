@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Панель управления — IT-Park Manufactura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/admin.css">
+
+  <link rel='icon' type='image/svg+xml' href='assets/shared/favicon.svg'>
+  <meta property='og:title' content='Papa Realtor � ???????????? ????????'>
+  <meta property='og:description' content='??????? ???????????? ? ???????? ? ???????? ? ?? ????????.'>
+  <meta property='og:image' content='assets/shared/og-image.webp'>
+  <meta property='og:type' content='website'>
+  <meta name='twitter:card' content='summary_large_image'>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled">
+    <div class="container">
+      <a href="index.html" class="nav-logo">MANUFACTURA <span>•</span> Админ</a>
+      <div class="nav-links">
+        <a href="index.html">← Вернуться на сайт</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-wrap container">
+    <!-- Login gate -->
+    <div id="loginGate" style="max-width:400px;margin:80px auto;text-align:center">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:36px;height:36px;margin:0 auto 20px;display:block;color:var(--clr-accent)">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0110 0v4"/>
+      </svg>
+      <h2 style="margin-bottom:8px">Вход в панель</h2>
+      <p style="color:var(--clr-text-muted);margin-bottom:24px;font-size:.9rem">Введите пароль администратора</p>
+      <div class="form-group" style="margin-bottom:16px">
+        <input type="password" id="adminPass" placeholder="Пароль" style="text-align:center">
+      </div>
+      <button class="btn btn-primary" id="loginBtn" style="width:100%;justify-content:center">Войти</button>
+      <p id="loginError" style="color:var(--clr-red);font-size:.8rem;margin-top:12px;display:none">Неверный пароль</p>
+    </div>
+
+    <!-- Admin content (hidden until login) -->
+    <div id="adminContent" style="display:none">
+      <div class="admin-header">
+        <div>
+          <h2>Управление объектами</h2>
+          <p style="color:var(--clr-text-muted);font-size:.85rem">Добавляйте и редактируйте квартиры для продажи</p>
+        </div>
+        <button class="btn btn-primary" id="addNewBtn">+ Новый объект</button>
+      </div>
+
+      <!-- Admin Tab Bar -->
+      <div class="admin-tabs">
+        <button class="tab-btn active" id="tabListingsBtn">Список объектов</button>
+        <button class="tab-btn" id="tabChatbotBtn">AI Чат-Ассистент</button>
+      </div>
+
+      <!-- Tab 1: Listings & Form -->
+      <div id="tabListingsContent">
+        <!-- Add/Edit Form (hidden by default) -->
+        <div class="admin-form" id="listingForm" style="display:none">
+          <h3 style="margin-bottom:20px" id="formTitle">Новый объект</h3>
+          <input type="hidden" id="editId" value="">
+
+          <div class="admin-form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+            <div class="form-group">
+              <label>Название</label>
+              <input type="text" id="fTitle" placeholder="Напр: 2-комн. квартира, 5 этаж">
+            </div>
+            <div class="form-group">
+              <label>Цена (USD)</label>
+              <input type="number" id="fPrice" placeholder="55000">
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px">
+            <div class="form-group">
+              <label>Площадь (м²)</label>
+              <input type="number" id="fArea" placeholder="52">
+            </div>
+            <div class="form-group">
+              <label>Этаж</label>
+              <input type="number" id="fFloor" placeholder="5">
+            </div>
+            <div class="form-group">
+              <label>Комнат</label>
+              <input type="number" id="fRooms" placeholder="2">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:16px">
+            <label>Описание</label>
+            <textarea id="fDesc" placeholder="Подробное описание квартиры..." style="min-height:80px"></textarea>
+          </div>
+
+          <div class="form-group" style="margin-bottom:16px">
+            <label>Состояние</label>
+            <select id="fCondition" style="width:100%;padding:14px 18px;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--radius);color:var(--clr-text);font-family:var(--font-body);font-size:.9rem">
+              <option value="shell">Черновая отделка</option>
+              <option value="partial">Частичная отделка</option>
+              <option value="finished">Под ключ</option>
+            </select>
+          </div>
+
+          <label>Фотографии</label>
+          <div class="dropzone" id="dropzone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 32px; height: 32px; margin: 0 auto 12px; display: block; color: var(--clr-text-muted);">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+              <circle cx="12" cy="13" r="3"/>
+            </svg>
+            <p>Перетащите фотографии сюда или <strong>нажмите для выбора</strong></p>
+            <input type="file" id="fileInput" multiple accept="image/*" style="display:none">
+          </div>
+          <div class="preview-images" id="previewImages"></div>
+
+          <div style="display:flex;gap:12px;margin-top:20px">
+            <button class="btn btn-primary" id="saveBtn">Сохранить</button>
+            <button class="btn btn-outline" id="cancelBtn">Отмена</button>
+          </div>
+        </div>
+
+        <!-- Listings -->
+        <div class="admin-listings" id="adminListings">
+          <!-- Populated dynamically -->
+        </div>
+
+        <div id="emptyState" style="text-align:center;padding:60px 20px;color:var(--clr-text-muted);display:none">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 48px; height: 48px; margin: 0 auto 16px; display: block; color: var(--clr-text-muted);">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          <h3 style="margin-bottom:8px;color:var(--clr-text)">Нет объектов</h3>
+          <p>Нажмите «+ Новый объект» чтобы добавить первую квартиру</p>
+        </div>
+      </div>
+
+      <!-- Tab 2: AI Chatbot Assistant -->
+      <div id="tabChatbotContent" style="display:none">
+        <div class="admin-split">
+          <!-- Chatbot Container -->
+          <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+              <!-- Populated dynamically -->
+            </div>
+            <div class="chat-chips" id="chatChips">
+              <!-- Interactive chips -->
+            </div>
+            <div class="chat-input-area">
+              <input type="text" id="chatInput" placeholder="Напишите ассистенту (напр: Добавь 2-к квартиру в Харькове)...">
+              <button class="btn btn-primary" id="chatSendBtn" style="padding:12px 24px">Отправить</button>
+            </div>
+          </div>
+
+          <!-- Live Preview & Generation Output -->
+          <div class="preview-panel">
+            <h3 style="margin-bottom:12px;font-family:var(--font-body);font-weight:600;font-size:1.2rem">Распознанные данные</h3>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div class="preview-field"><span class="lbl">Название:</span><span class="val" id="prevTitle">—</span></div>
+              <div class="preview-field"><span class="lbl">Цена:</span><span class="val" id="prevPrice">—</span></div>
+              <div class="preview-field"><span class="lbl">Площадь (м²):</span><span class="val" id="prevArea">—</span></div>
+              <div class="preview-field"><span class="lbl">Комнат:</span><span class="val" id="prevRooms">—</span></div>
+              <div class="preview-field"><span class="lbl">Этаж:</span><span class="val" id="prevFloor">—</span></div>
+              <div class="preview-field"><span class="lbl">Состояние:</span><span class="val" id="prevCondition">—</span></div>
+            </div>
+
+            <div style="margin-top:10px">
+              <label style="display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--clr-text-muted);margin-bottom:8px;font-weight:600">Стиль 3D-реновации (Интерьер)</label>
+              <div class="style-selector" id="styleSelector">
+                <div class="style-option active" data-style="minimalist">Минимализм</div>
+                <div class="style-option" data-style="loft">Лофт</div>
+                <div class="style-option" data-style="cozy">Уютный</div>
+              </div>
+            </div>
+
+            <div style="margin-top:10px">
+              <label style="display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--clr-text-muted);margin-bottom:8px;font-weight:600">Слайдер реновации (Превью)</label>
+              <div class="slider-container" style="max-height:180px">
+                <div class="img"><img id="previewBeforeImg" src="assets/skazka/rooms/room1_real.webp" alt="Before"></div>
+                <div class="foreground-img img"><img id="previewAfterImg" src="assets/skazka/rooms/room1_render.webp" alt="After"></div>
+                <div class="slider-line" id="prevLine" style="left:50%"></div>
+                <div class="slider-handle" id="prevHandle" style="left:50%">
+                  <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:var(--clr-bg);"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </div>
+                <!-- Invisible slider input overlay to support sliding inside admin panel preview -->
+                <input type="range" class="slider-input" id="prevSliderInput" min="0" max="100" value="50">
+              </div>
+            </div>
+
+            <div style="display:flex;gap:12px;margin-top:auto">
+              <button class="btn btn-primary" id="saveChatListingBtn" style="flex:1;justify-content:center">✓ Сохранить объект</button>
+            </div>
+
+            <div class="share-output" id="shareOutput" style="display:none">
+              <h4 style="font-family:var(--font-body);font-weight:600;font-size:0.95rem;color:var(--clr-text)">Поделиться с клиентом</h4>
+              <div class="share-url" id="shareUrl">Сначала сохраните объект...</div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-outline" id="copyShareLinkBtn" style="padding:10px;flex:1;font-size:0.7rem">Копировать ссылку</button>
+                <button class="btn btn-outline" id="downloadStandaloneBtn" style="padding:10px;flex:1;font-size:0.7rem">Скачать файл HTML</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/core/i18n.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/admin-chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Backup and build files
+_backup/
+node_modules/
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
