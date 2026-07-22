@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru" data-theme="skazka">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>ЖК Сказка — Квартира в новом комплексе | Харьков</title>
@@ -11,26 +12,7 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
-  <style>
-    @media (max-width: 968px) {
-      #hero {
-        background-image: url("assets/skazka/exterior_1.webp");
-        background-size: cover;
-        background-position: center;
-      }
-      #hero-canvas {
-        display: none !important;
-      }
-    }
   
-    .messenger-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
-    .btn-messenger { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 16px; border-radius: var(--radius); text-decoration: none; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.5px; transition: var(--transition); color: #fff; border: none; cursor: pointer; }
-    .btn-tg { background: #229ED9; } .btn-tg:hover { background: #1c88ba; transform: translateY(-2px); }
-    .btn-wa { background: #25D366; } .btn-wa:hover { background: #20b858; transform: translateY(-2px); }
-    .btn-vi { background: #7360F2; } .btn-vi:hover { background: #5c4ad3; transform: translateY(-2px); }
-    .btn-ph { background: var(--clr-accent); color: var(--clr-bg); } .btn-ph:hover { opacity: 0.9; transform: translateY(-2px); }
-    @media(max-width:600px) { .messenger-buttons { grid-template-columns: 1fr; } }
-  </style>
 
   <link rel='icon' type='image/svg+xml' href='assets/shared/favicon.svg'>
   <meta property='og:title' content='Papa Realtor � ???????????? ????????'>
@@ -38,6 +20,7 @@
   <meta property='og:image' content='assets/shared/og-image.webp'>
   <meta property='og:type' content='website'>
   <meta name='twitter:card' content='summary_large_image'>
+
 </head>
 <body>
 
@@ -46,18 +29,13 @@
     <div class="container">
       <a href="#hero" class="nav-logo">ЖК СКАЗКА <span>•</span> Квартира</a>
       <div class="nav-links" id="navLinks">
-        <a href="#about" data-i18n="nav_about">О комплексе</a>
-        <a href="#apartment" data-i18n="nav_space">Пространство</a>
-        <a href="#gallery" data-i18n="nav_gallery">Галерея</a>
-        <a href="#video-section" data-i18n="nav_video">Видео</a>
-        <a href="#location" data-i18n="nav_location">Расположение</a>
-        <a href="#contact" data-i18n="nav_contact">Контакты</a>
+        <a href="#hero">Пролог</a>
+        <a href="#ch1">Глава I</a>
+        <a href="#ch2">Глава II</a>
+        <a href="#ch3">Глава III</a>
+        <a href="#epilogue">Эпилог</a>
       </div>
-      <a href="tel:+380996301880" class="nav-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        +38 099 630 18 80
-      </a>
-      <button class="burger" id="burger" aria-label="Меню">
+      <button class="burger" id="burger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -65,300 +43,169 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" data-i18n="nav_about">О комплексе</a>
-    <a href="#apartment" data-i18n="nav_space">Пространство</a>
-    <a href="#gallery" data-i18n="nav_gallery">Галерея</a>
-    <a href="#video-section" data-i18n="nav_video">Видео</a>
-    <a href="#location" data-i18n="nav_location">Расположение</a>
-    <a href="#contact" data-i18n="nav_contact">Контакты</a>
+    <a href="#hero">Пролог</a>
+    <a href="#ch1">Глава I</a>
+    <a href="#ch2">Глава II</a>
+    <a href="#ch3">Глава III</a>
+    <a href="#epilogue">Эпилог</a>
   </div>
 
-  <!-- HERO -->
-  <section id="hero" data-bg="assets/skazka/exterior_1.webp">
+  <!-- PROLOGUE -->
+  <header id="hero">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-tag"><span class="dot"></span> ЖК Сказка</div>
-      <h1 class="hero-title">Своя квартира на<br><em>Холодной Горе</em></h1>
+    <div class="hero-content reveal">
+      <div class="hero-tag"><div class="dot"></div>ЖК Сказка</div>
+      <h1 class="hero-title">Своя квартира<br>на <em>Холодной Горе</em></h1>
       <p class="hero-sub">Обычная панелька на Холодной Горе, скажете вы. Но послушайте — тихий двор, метро через дорогу, кирпич, потолки три метра. А внутри можно сделать так, что соседи не поверят.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="num" data-count="48">0</div><div class="label">м² площадь</div></div>
-        <div class="hero-stat"><div class="num" data-count="8">0</div><div class="label">этаж</div></div>
-        <div class="hero-stat"><div class="num" data-count="2">0</div><div class="label">комнаты</div></div>
-        <div class="hero-stat"><div class="num" data-count="2024">0</div><div class="label">год сдачи</div></div>
-      </div>
-      <div class="hero-btns">
-        <a href="#contact" class="btn btn-primary">Узнать стоимость</a>
-        <a href="#apartment" class="btn btn-outline">Интерьерные решения</a>
-      </div>
     </div>
     <div class="scroll-hint">
-      <span>Скролл</span>
+      Листайте вниз
       <div class="line"></div>
     </div>
-  </section>
+  </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container grid-2">
-      <div class="reveal-left">
-        <div class="about-img-wrap">
-          <img src="assets/skazka/exterior_2.webp" loading="lazy" alt="ЖК Сказка">
-          <div class="about-badge">
-            <div class="val">ЖС-1</div>
-            <div class="lbl">застройщик</div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <span class="section-label">Честно о доме</span>
-        <h2 class="section-title">Что за дом и стоит ли смотреть</h2>
-        <p>Давайте честно: это панелька. Но не та советская панелька, которую вы себе представили — а современная, из белого силикатного кирпича, построенная «Трестом Жилстрой-1». ЖС-1 — это тот застройщик, который в Харькове строит уже десятки лет, и дома у них, скажем так, крепкие. Стены утеплены минеральной ватой 100 мм снаружи, так что зимой тепло, а летом не душно. Потолки 3 метра — это вам не хрущёвка.</p>
-        <p style="margin-top: 16px; color: var(--clr-text-muted);">Район — Холодная Гора. Название звучит не очень гламурно, зато по факту: метро буквально через дорогу, маршрутки во все стороны, рядом Привоз и куча магазинов. Район тихий, спальный — тут вечером дети во дворе играют, а не BMW под окнами дрифтят. Если вам важны тишина и транспорт — лучше сложно найти за эти деньги.</p>
-        
-        <div class="about-features" style="display: none;" id="skazkaFeatures">
-          <div class="about-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-            <div>
-              <h4>Кирпич, а не панель</h4>
-              <p>Белый силикатный кирпич — тише и теплее, чем панели. Соседей через стену почти не слышно.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <div>
-              <h4>Зимой не мёрзнем</h4>
-              <p>100 мм минваты снаружи. Батареи на «тройке» — и в квартире +23. Платёжки за отопление не пугают.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <div>
-              <h4>Метро — 2 минуты</h4>
-              <p>Станция «Холодная Гора» через дорогу. Плюс автовокзал и маршрутки. Добраться можно куда угодно.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-            <div>
-              <h4>Нормальный двор</h4>
-              <p>Детская площадка, лавочки, зелень. Машины паркуются вдоль дороги, а не на газоне. Редкость, да.</p>
-            </div>
-          </div>
-        </div>
-        <button id="toggleFeaturesBtn" class="btn btn-outline" style="margin-top: 1rem;">А что ещё?</button>
-        <script>
-          document.getElementById('toggleFeaturesBtn').addEventListener('click', function() {
-            const features = document.getElementById('skazkaFeatures');
-            if (features.style.display === 'none') {
-              features.style.display = 'grid';
-              this.textContent = 'Скрыть';
-            } else {
-              features.style.display = 'none';
-              this.textContent = 'А что ещё?';
-            }
-          });
-        </script>
-      </div>
+  <!-- CHAPTER I: HISTORY & SOUL -->
+  <section id="ch1" class="scrolly-section">
+    <div class="scrolly-sticky">
+      <img src="assets/skazka/exterior_1.webp" alt="ЖК Сказка Фасад" loading="lazy">
     </div>
-  </section>
-
-  <!-- APARTMENT / INTERACTIVE SLIDERS -->
-  <section id="apartment">
-    <div class="container">
-      <div class="reveal" style="text-align: center; margin-bottom: 60px;">
-        <span class="section-label">А что внутри?</span>
-        <h2 class="section-title" style="display: inline-block;">Интерактивная визуализация</h2>
-        <p style="max-width: 600px; margin: 0 auto; color: var(--clr-text-muted);">Квартира сейчас в черновой отделке — голые стены, бетонный пол. Но в этом и плюс: вы делаете под себя, а не переделываете за кем-то. Потяните ползунок, чтобы увидеть, как это может выглядеть после ремонта.</p>
-      </div>
-
-      <div class="slider-wrapper">
-        <!-- Room 1 -->
-        <div class="slider-item reveal">
-          <div class="slider-info">
-            <h3>Гостиная — 22 квадрата</h3>
-            <p>Комната большая, окна выходят во двор — тихо. Потолки 3 метра, так что даже с натяжным потолком будет просторно. Тут реально помещается и диван, и рабочий стол, и не чувствуешь себя в коробке.</p>
-            <div class="slider-specs">
-              <div class="slider-spec"><span class="val">22.4 м²</span><span class="lbl">площадь</span></div>
-              <div class="slider-spec"><span class="val">3.0 м</span><span class="lbl">потолки</span></div>
-            </div>
-          </div>
-          <div class="comparison-slider" data-before-label="Черновая" data-after-label="Дизайн-проект">
-            <img class="slider-img-before" src="assets/skazka/rooms/room1_real.webp" loading="lazy" alt="Черновая отделка">
-            <img class="slider-img-after" src="assets/skazka/rooms/room1_render.webp" loading="lazy" alt="Дизайн-проект">
-          </div>
-        </div>
-
-        <!-- Kitchen -->
-        <div class="slider-item reverse reveal">
-          <div class="slider-info">
-            <h3>Кухня — не проходная</h3>
-            <p>Почти 15 квадратов — это не та кухня, где два человека не могут развернуться. Сюда влезет нормальный гарнитур, холодильник и останется место для маленького стола. Планировка прямоугольная, без коридорных изгибов.</p>
-            <div class="slider-specs">
-              <div class="slider-spec"><span class="val">14.8 м²</span><span class="lbl">площадь</span></div>
-              <div class="slider-spec"><span class="val">Вентканал</span><span class="lbl">коммуникации</span></div>
-            </div>
-          </div>
-          <div class="comparison-slider" data-before-label="Черновая" data-after-label="Дизайн-проект">
-            <img class="slider-img-before" src="assets/skazka/rooms/kitchen_real.webp" loading="lazy" alt="Черновая отделка">
-            <img class="slider-img-after" src="assets/skazka/rooms/kitchen_render.webp" loading="lazy" alt="Дизайн-проект">
-          </div>
-        </div>
-
-        <!-- Bedroom -->
-        <div class="slider-item reveal">
-          <div class="slider-info">
-            J квадратов — кровать, шкаф, тумбочка. Без лишнего. Окно на восток — утром светло, но не жарко. Если работаете из дома, можно поставить маленький стол у окна.</p>
-            <div class="slider-specs">
-              <div class="slider-spec"><span class="val">12.2 м²</span><span class="lbl">площадь</span></div>
-              <div class="slider-spec"><span class="val">Железобетон</span><span class="lbl">колонна</span></div>
-            </div>
-          </div>
-          <div class="comparison-slider" data-before-label="Черновая" data-after-label="Дизайн-проект">
-            <img class="slider-img-before" src="assets/skazka/rooms/bedroom_real.webp" loading="lazy" alt="Черновая отделка">
-            <img class="slider-img-after" src="assets/skazka/rooms/bedroom_render.webp" loading="lazy" alt="Дизайн-проект">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="container">
-      <div class="reveal" style="text-align: center;">
-        <span class="section-label">Визуальный обзор</span>
-        <h2 class="section-title" style="display: inline-block;">Галерея объекта</h2>
-      </div>
-      <div class="gallery-grid reveal">
-        <!-- Video (Hero item, spans 2 rows) -->
-        <div class="gallery-item video-item" data-src="assets/skazka/video_1.mp4" data-type="video">
-          <video src="assets/skazka/video_1.mp4" autoplay muted loop playsinline></video>
-          <div class="overlay"><span>Видеооблет комплекса</span></div>
-          <div class="play-icon-overlay">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-
-        <!-- Living Room Raw (Portrait) -->
-        <div class="gallery-item portrait" data-src="assets/skazka/rooms/room1_real.webp" data-type="image">
-          <img src="assets/skazka/rooms/room1_real.webp" loading="lazy" class="bg-blur" alt="">
-          <img src="assets/skazka/rooms/room1_real.webp" loading="lazy" class="fg-img" alt="Черновая отделка гостиной">
-          <div class="overlay"><span>Гостиная (Черновая отделка)</span></div>
-        </div>
-
-        <!-- Exterior Front (Landscape) -->
-        <div class="gallery-item" data-src="assets/skazka/exterior_2.webp" data-type="image">
-          <img src="assets/skazka/exterior_2.webp" loading="lazy" alt="Фасад ЖК Сказка">
-          <div class="overlay"><span>Фасад ЖК Сказка</span></div>
-        </div>
-
-        <!-- Kitchen Raw (Portrait) -->
-        <div class="gallery-item portrait" data-src="assets/skazka/rooms/kitchen_real.webp" data-type="image">
-          <img src="assets/skazka/rooms/kitchen_real.webp" loading="lazy" class="bg-blur" alt="">
-          <img src="assets/skazka/rooms/kitchen_real.webp" loading="lazy" class="fg-img" alt="Черновая отделка кухни">
-          <div class="overlay"><span>Кухня (Черновая отделка)</span></div>
-        </div>
-
-        <!-- Exterior Closeup (Landscape) -->
-        <div class="gallery-item" data-src="assets/skazka/exterior_3.webp" data-type="image">
-          <img src="assets/skazka/exterior_3.webp" loading="lazy" alt="Архитектурные детали">
-          <div class="overlay"><span>Детали фасада</span></div>
-        </div>
-
-        <!-- Bedroom Raw (Portrait) -->
-        <div class="gallery-item portrait" data-src="assets/skazka/rooms/bedroom_real.webp" data-type="image">
-          <img src="assets/skazka/rooms/bedroom_real.webp" loading="lazy" class="bg-blur" alt="">
-          <img src="assets/skazka/rooms/bedroom_real.webp" loading="lazy" class="fg-img" alt="Черновая отделка спальни">
-          <div class="overlay"><span>Спальня (Черновая отделка)</span></div>
-        </div>
-
-        <!-- Floorplan (Wide, spans 2 columns) -->
-        <div class="gallery-item wide" data-src="assets/skazka/floorplan.webp" data-type="image">
-          <img src="assets/skazka/floorplan.webp" loading="lazy" alt="План квартиры">
-          <div class="overlay"><span>Планировка квартиры</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOCATION -->
-  <section id="location">
-    <div class="container">
-      <div class="reveal" style="text-align: center;">
-        <span class="section-label">Где это?</span>
-        <h2 class="section-title" style="display: inline-block;">Расположение</h2>
-        <p style="max-width: 600px; margin: 0 auto; color: var(--clr-text-muted);">Полтавский Шлях, 186. Если вы из Харькова, вы знаете этот район — Холодная Гора. Не центр, но и не окраина. Золотая середина для тех, кому важно быстро добираться, но не платить как за Пушкинскую.</p>
-      </div>
-      <div class="location-cards">
-        <div class="location-card reveal">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg>
-          <h4>Метро и маршрутки</h4>
-          <p>Станция «Холодная Гора» — 2 минуты пешком. Автовокзал рядом. Хочешь на работу в центр — 15 минут на метро.</p>
-        </div>
-        <div class="location-card reveal">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          <h4>Тихий район</h4>
-          <p>Спальный район без ночных клубов и шумных трасс. Вечером слышно птиц, а не сирены. Для семьи — самое то.</p>
-        </div>
-        <div class="location-card reveal">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <h4>Цена — адекватная</h4>
-          <p>Не элитка, не убитая вторичка. Нормальная новостройка по нормальной цене. Без накруток за «престижный район».</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DYNAMIC LISTINGS -->
-  <section id="listings" style="display: none;">
-    <div class="container">
-      <div class="reveal" style="text-align: center;">
-        <span class="section-label">Дополнительно</span>
-        <h2 class="section-title" style="display: inline-block;">Другие предложения в этом комплексе</h2>
-      </div>
-      <div id="listingsGrid" class="gallery-grid reveal"></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container contact-grid">
-      <div class="reveal-left">
-        <span class="section-label">Поговорим?</span>
-        <h2 class="section-title">Давайте поговорим</h2>
-        <p style="color: var(--clr-text-muted); margin-bottom: 40px; font-weight: 300;">Хотите посмотреть квартиру вживую или просто задать вопросы — пишите. Без обязательств, без давления. Расскажу всё как есть.</p>
-        
-        <div class="contact-info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          <div>
-            <h4>Позвоните или напишите</h4>
-            <p><a href="tel:+380996301880">+38 099 630 18 80</a></p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <div>
-            <h4>Адрес</h4>
-            <p>Украина, Харьков, улица Полтавский Шлях, 186</p>
-          </div>
+    <div class="scrolly-content container">
+      <div class="scrolly-step reveal">
+        <div class="scrolly-card">
+          <span class="section-label">Глава I</span>
+          <h3>Честно о доме</h3>
+          <p>Давайте честно: это панелька. Но не та советская панелька, которую вы себе представили — а современная, из белого силикатного кирпича, построенная «Трестом Жилстрой-1». ЖС-1 — это тот застройщик, который в Харькове строит уже десятки лет, и дома у них, скажем так, крепкие. Стены утеплены минеральной ватой 100 мм снаружи, так что зимой тепло, а летом не душно. Потолки 3 метра — это вам не хрущёвка.</p>
         </div>
       </div>
       
-        <div class="messenger-buttons">
-          <a href="tel:+380996301880" class="btn-messenger btn-ph">+38 099 630 18 80</a>
-          <a href="https://t.me/+380996301880" class="btn-messenger btn-tg" target="_blank">Telegram</a>
-          <a href="https://wa.me/380996301880" class="btn-messenger btn-wa" target="_blank">WhatsApp</a>
-          <a href="viber://chat?number=380996301880" class="btn-messenger btn-vi">Viber</a>
+      <div class="scrolly-step reveal">
+        <div class="scrolly-card">
+          <h3>Микродетали</h3>
+          <p><strong>Кирпич, а не панель:</strong> Белый силикатный кирпич — тише и теплее, чем обычные бетонные панели. Соседей через стену почти не слышно.<br><br>
+          <strong>Зимой не мёрзнем:</strong> 100 мм минваты снаружи. Батареи на «тройке» — и в квартире +23. Платёжки за отопление не пугают.</p>
         </div>
-      <div class="reveal-right">
-        <form class="contact-form" id="contactForm">
-          <div class="form-group"><input type="text" placeholder="Ваше имя" required></div>
-          <div class="form-group"><input type="tel" placeholder="Номер телефона" required></div>
-          <div class="form-group"><input type="email" placeholder="Электронная почта (необязательно)"></div>
-          <div class="form-group"><textarea placeholder="Ваши вопросы или комментарии"></textarea></div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить запрос</button>
-        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER II: NEIGHBORHOOD -->
+  <section id="ch2" class="scrolly-section">
+    <div class="scrolly-sticky">
+      <img src="assets/skazka/exterior_2.webp" alt="Двор и инфраструктура" loading="lazy">
+    </div>
+    <div class="scrolly-content container">
+      <div class="scrolly-step reveal">
+        <div class="scrolly-card">
+          <span class="section-label">Глава II</span>
+          <h3>Где это?</h3>
+          <p>Полтавский Шлях, 186. Если вы из Харькова, вы знаете этот район — Холодная Гора. Не центр, но и не окраина. Золотая середина для тех, кому важно быстро добираться, но не платить как за Пушкинскую.<br><br>
+          Метро буквально через дорогу, маршрутки во все стороны, рядом Класс и куча магазинов. Район тихий, спальный — тут вечером дети во дворе играют, а не BMW под окнами дрифтят. Если вам важны тишина и транспорт — лучше сложно найти за эти деньги.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER III: POTENTIAL (SLIDERS) -->
+  <section id="ch3" class="scrolly-section">
+    <div class="scrolly-sticky">
+      <img src="assets/skazka/exterior_3.webp" alt="Окна" loading="lazy">
+    </div>
+    <div class="scrolly-content container">
+      <div class="scrolly-step reveal">
+        <div class="scrolly-card" style="max-width: 100%; width: 100%;">
+          <span class="section-label">Глава III</span>
+          <h3>А что внутри?</h3>
+          <p>Квартира сейчас в черновой отделке — голые стены, бетонный пол. Но в этом и плюс: вы делаете под себя, а не переделываете за кем-то. Потяните ползунок, чтобы увидеть, как это может выглядеть после ремонта.</p>
+          
+          <div class="slider-wrapper">
+            
+            <!-- Room 1 -->
+            <div class="slider-item">
+              <div class="slider-info">
+                <h3>Гостиная — 22 квадрата</h3>
+                <p>Комната большая, окна выходят во двор — тихо. Потолки 3 метра, так что даже с натяжным потолком будет просторно. Тут реально помещается и диван, и рабочий стол, и не чувствуешь себя в коробке.</p>
+              </div>
+              <div class="slider-container">
+                <div class="comparison-slider">
+                  <img src="assets/skazka/rooms/room1_real.webp" alt="Черновая отделка" class="cs-layer-before">
+                  <img src="assets/skazka/rooms/room1_render.webp" alt="Визуализация лофт" class="cs-layer-after">
+                  <div class="cs-divider"></div>
+                  <div class="cs-handle">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                  </div>
+                  <div class="cs-label before">Реальность</div>
+                  <div class="cs-label after">Потенциал</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Room 2 -->
+            <div class="slider-item reverse">
+              <div class="slider-info">
+                <h3>Кухня — не проходная</h3>
+                <p>Почти 15 квадратов — это не та кухня, где два человека не могут развернуться. Сюда влезет нормальный гарнитур, холодильник и останется место для маленького стола. Планировка прямоугольная, без коридорных изгибов.</p>
+              </div>
+              <div class="slider-container">
+                <div class="comparison-slider">
+                  <img src="assets/skazka/rooms/kitchen_real.webp" alt="Черновая" class="cs-layer-before">
+                  <img src="assets/skazka/rooms/kitchen_render.webp" alt="Визуализация" class="cs-layer-after">
+                  <div class="cs-divider"></div>
+                  <div class="cs-handle">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                  </div>
+                  <div class="cs-label before">Реальность</div>
+                  <div class="cs-label after">Потенциал</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Room 3 -->
+            <div class="slider-item">
+              <div class="slider-info">
+                <h3>Спальня — для сна, не для мебели</h3>
+                <p>12 квадратов — кровать, шкаф, тумбочка. Без лишнего. Окно на восток — утром светло, но не жарко. Если работаете из дома, можно поставить маленький стол у окна.</p>
+              </div>
+              <div class="slider-container">
+                <div class="comparison-slider">
+                  <img src="assets/skazka/rooms/bedroom_real.webp" alt="Черновая" class="cs-layer-before">
+                  <img src="assets/skazka/rooms/bedroom_render.webp" alt="Визуализация" class="cs-layer-after">
+                  <div class="cs-divider"></div>
+                  <div class="cs-handle">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                  </div>
+                  <div class="cs-label before">Реальность</div>
+                  <div class="cs-label after">Потенциал</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EPILOGUE: CONTACT -->
+  <section id="epilogue" style="padding-top: 15vh; padding-bottom: 15vh; background: var(--clr-bg);">
+    <div class="container reveal">
+      <span class="section-label">Эпилог</span>
+      <h2 class="section-title">Поговорим?</h2>
+      <p style="max-width: 600px;">Хотите посмотреть квартиру вживую или просто задать вопросы — пишите. Без обязательств, без давления. Расскажу всё как есть, покажу все углы и документы.</p>
+      
+      <div class="editorial-contact-links">
+        <a href="tel:+380996301880" class="ed-link">
+          <span>Позвонить</span>
+          +38 099 630 18 80
+        </a>
+        <a href="https://t.me/realtor" target="_blank" class="ed-link">
+          <span>Написать</span>
+          Telegram
+        </a>
+        <a href="https://wa.me/380996301880" target="_blank" class="ed-link">
+          <span>Написать</span>
+          WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -366,32 +213,26 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p class="footer-copy">&copy; 2026 ЖК Сказка. Все права защищены.</p>
-      <a href="admin.html" class="footer-admin">Панель управления</a>
+      <div class="footer-copy">&copy; 2026 ЖК Сказка. Все права защищены.</div>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose">✕</button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">❮</button>
-    <button class="lightbox-nav lightbox-next" id="lightboxNext">❯</button>
-    <img id="lightboxImg" src="" loading="lazy" alt="" style="display: none;">
-    <video id="lightboxVideo" src="" controls playsinline style="display: none;"></video>
-  </div>
-
-  <!-- SCRIPTS -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
   <script src="js/core/i18n.js"></script>
   <script src="js/core/slider.js"></script>
   <script src="js/core/navigation.js"></script>
-  <script src="js/scenes/skazka-scene.js"></script>
-  <script src="js/gallery.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.initSliders) window.initSliders();
-    });
+  <script type="module">
+    import { initBuildingScene } from './js/scenes/skazka-scene.js';
+    initBuildingScene('hero-canvas');
   </script>
 </body>
 </html>

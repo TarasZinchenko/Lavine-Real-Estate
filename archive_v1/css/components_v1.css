@@ -29,8 +29,12 @@
 .hero-stat .label { font-size: 0.7rem; color: var(--clr-text-muted); text-transform: uppercase; letter-spacing: 1px; }
 .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
 
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 36px; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; transition: var(--transition); text-transform: uppercase; border: none; cursor: pointer; color: var(--clr-accent); }
-.btn:hover { color: var(--clr-text); }
+/* ===== BUTTONS ===== */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 36px; border-radius: var(--radius); font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; transition: var(--transition); text-transform: uppercase; border: none; cursor: pointer; }
+.btn-primary { background: var(--clr-accent); color: var(--clr-bg); }
+.btn-primary:hover { background: var(--clr-accent-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(197,168,128,.2); }
+.btn-outline { border: 1px solid var(--clr-border); color: var(--clr-text); background: transparent; }
+.btn-outline:hover { border-color: var(--clr-accent); color: var(--clr-accent); transform: translateY(-2px); }
 
 .scroll-hint { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--clr-text-muted); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; animation: float 3s ease-in-out infinite; }
 .scroll-hint .line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--clr-accent), transparent); }
@@ -277,24 +281,15 @@
   section { padding: 80px 0; }
 }
 
-/* ===== EDITORIAL CONTACT LINKS ===== */
-.editorial-contact-links { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
-.ed-link { position: relative; font-family: var(--font-heading); font-size: 2rem; color: var(--clr-text); display: inline-block; width: fit-content; padding-bottom: 8px; transition: color var(--transition); }
-.ed-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: var(--clr-text-muted); transition: var(--transition); transform-origin: right; }
-.ed-link:hover { color: var(--clr-accent); }
-.ed-link:hover::after { background: var(--clr-accent); transform: scaleX(0); transform-origin: left; }
-.ed-link span { display: block; font-family: var(--font-body); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--clr-text-muted); margin-bottom: 4px; }
-
-/* ===== STICKY SCROLLYTELLING ===== */
-.scrolly-section { position: relative; width: 100%; }
-.scrolly-sticky { position: sticky; top: 0; height: 100vh; width: 100%; overflow: hidden; z-index: 1; }
-.scrolly-sticky img, .scrolly-sticky video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: opacity 0.8s; }
-.scrolly-content { position: relative; z-index: 2; margin-top: -100vh; padding-bottom: 20vh; }
-.scrolly-step { min-height: 100vh; display: flex; align-items: center; padding: 0 5vw; }
-.scrolly-card { background: rgba(10, 11, 14, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--clr-border); padding: 48px; border-radius: 0; max-width: 540px; }
-.scrolly-card h3 { color: var(--clr-accent); margin-bottom: 1rem; }
-.scrolly-card p { margin-bottom: 0; }
-@media(max-width: 768px) {
-  .scrolly-card { padding: 32px; max-width: 100%; margin-top: auto; margin-bottom: 10vh; }
-  .scrolly-step { align-items: flex-end; }
-}
+/* ===== MESSENGER BUTTONS ===== */
+.messenger-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.btn-messenger { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 16px; border-radius: var(--radius); text-decoration: none; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.5px; transition: var(--transition); color: #fff; border: none; cursor: pointer; }
+.btn-tg { background: #229ED9; }
+.btn-tg:hover { background: #1c88ba; transform: translateY(-2px); }
+.btn-wa { background: #25D366; }
+.btn-wa:hover { background: #20b858; transform: translateY(-2px); }
+.btn-vi { background: #7360F2; }
+.btn-vi:hover { background: #5c4ad3; transform: translateY(-2px); }
+.btn-ph { background: var(--clr-accent); color: var(--clr-bg); }
+.btn-ph:hover { opacity: 0.9; transform: translateY(-2px); }
+@media(max-width:600px) { .messenger-buttons { grid-template-columns: 1fr; } }

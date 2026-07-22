@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru" data-theme="manufactura">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>IT-Park Manufactura — Квартира с видом на набережную | Харьков</title>
@@ -11,26 +12,7 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
-  <style>
-    @media (max-width: 968px) {
-      #hero {
-        background-image: url("assets/manufactura/exterior.webp");
-        background-size: cover;
-        background-position: center;
-      }
-      #hero-canvas {
-        display: none !important;
-      }
-    }
   
-    .messenger-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
-    .btn-messenger { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 16px; border-radius: var(--radius); text-decoration: none; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.5px; transition: var(--transition); color: #fff; border: none; cursor: pointer; }
-    .btn-tg { background: #229ED9; } .btn-tg:hover { background: #1c88ba; transform: translateY(-2px); }
-    .btn-wa { background: #25D366; } .btn-wa:hover { background: #20b858; transform: translateY(-2px); }
-    .btn-vi { background: #7360F2; } .btn-vi:hover { background: #5c4ad3; transform: translateY(-2px); }
-    .btn-ph { background: var(--clr-accent); color: var(--clr-bg); } .btn-ph:hover { opacity: 0.9; transform: translateY(-2px); }
-    @media(max-width:600px) { .messenger-buttons { grid-template-columns: 1fr; } }
-  </style>
 
   <link rel='icon' type='image/svg+xml' href='assets/shared/favicon.svg'>
   <meta property='og:title' content='Papa Realtor � ???????????? ????????'>
@@ -38,25 +20,22 @@
   <meta property='og:image' content='assets/shared/og-image.webp'>
   <meta property='og:type' content='website'>
   <meta name='twitter:card' content='summary_large_image'>
+
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="container">
-      <a href="#hero" class="nav-logo">MANUFACTURA <span>•</span> Квартира</a>
+      <a href="#hero" class="nav-logo">IT-Park <span>•</span> Manufactura</a>
       <div class="nav-links" id="navLinks">
-        <a href="#about" data-i18n="nav_about">О комплексе</a>
-        <a href="#gallery" data-i18n="nav_gallery">Галерея</a>
-        <a href="#video-section" data-i18n="nav_video">Видео</a>
-        <a href="#location" data-i18n="nav_location">Расположение</a>
-        <a href="#contact" data-i18n="nav_contact">Контакты</a>
+        <a href="#hero">Пролог</a>
+        <a href="#ch1">Глава I</a>
+        <a href="#ch2">Глава II</a>
+        <a href="#ch3">Глава III</a>
+        <a href="#epilogue">Эпилог</a>
       </div>
-      <a href="tel:+380996301880" class="nav-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        +38 099 630 18 80
-      </a>
-      <button class="burger" id="burger" aria-label="Меню">
+      <button class="burger" id="burger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -64,205 +43,105 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" data-i18n="nav_about">О комплексе</a>
-    <a href="#gallery" data-i18n="nav_gallery">Галерея</a>
-    <a href="#video-section" data-i18n="nav_video">Видео</a>
-    <a href="#location" data-i18n="nav_location">Расположение</a>
-    <a href="#contact" data-i18n="nav_contact">Контакты</a>
+    <a href="#hero">Пролог</a>
+    <a href="#ch1">Глава I</a>
+    <a href="#ch2">Глава II</a>
+    <a href="#ch3">Глава III</a>
+    <a href="#epilogue">Эпилог</a>
   </div>
 
-  <!-- HERO -->
-  <section id="hero" data-bg="assets/manufactura/exterior.webp">
+  <!-- PROLOGUE -->
+  <header id="hero">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-tag"><span class="dot"></span> IT-Park Manufactura</div>
-      <h1 class="hero-title">Пространство с видом<br>на <em>набережную</em></h1>
+    <div class="hero-content reveal">
+      <div class="hero-tag"><div class="dot"></div>Live & Work</div>
+      <h1 class="hero-title">Двухкомнатный<br><em>Лофт</em></h1>
       <p class="hero-sub">Бывшая мельница 1886 года на берегу реки. Теперь здесь лофты с высокими потолками, кирпичными стенами и видом на воду. Звучит как Бруклин, а это Харьков.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="num" data-count="52">0</div><div class="label">м² площадь</div></div>
-        <div class="hero-stat"><div class="num" data-count="5">0</div><div class="label">этаж</div></div>
-        <div class="hero-stat"><div class="num" data-count="2">0</div><div class="label">комнаты</div></div>
-        <div class="hero-stat"><div class="num" data-count="2026">0</div><div class="label">год сдачи</div></div>
-      </div>
-      <div class="hero-btns">
-        <a href="#contact" class="btn btn-primary">Узнать стоимость</a>
-      </div>
     </div>
     <div class="scroll-hint">
-      <span>Скролл</span>
+      Читать историю
       <div class="line"></div>
     </div>
-  </section>
+  </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container grid-2">
-      <div class="reveal-left">
-        <div class="about-img-wrap">
-          <img src="assets/manufactura/exterior.webp" loading="lazy" alt="IT-Park Manufactura">
-          <div class="about-badge">
-            <div class="val">1886</div>
-            <div class="lbl">историческая основа</div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <span class="section-label">Честно о доме</span>
-        <h2 class="section-title">История одной мельницы</h2>
-        <p>В 1886 году здесь построили мукомольную мельницу. Она работала больше ста лет, пережила две войны, а потом заброшенную территорию выкупила компания «Строй Сити» и сделала то, что в Европе делают давно — превратила промышленное здание в жилой комплекс. Кирпичные стены оставили как есть, добавили панорамные окна и современные коммуникации.</p>
-        <p style="margin-top: 16px; color: var(--clr-text-muted);">Идея простая: живёшь и работаешь в одном месте. На первых этажах — коворкинги и IT-офисы, наверху — квартиры-лофты. Утром спустился на лифте на работу, вечером поднялся домой. Для айтишников и фрилансеров — мечта, если честно.</p>
-        
-        <div class="about-features">
-          <div class="about-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-            <div>
-              <h4>Живёшь + работаешь</h4>
-              <p>Коворкинг внизу, квартира наверху. Утренний «комьют» — это лифт. Экономишь 2 часа в день.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <div>
-              <h4>Река за окном</h4>
-              <p>Окна выходят на реку Харьков. Это настоящие стены мельницы, которым 140 лет — такое не подделаешь. Летом — зелень и утки за окном, зимой — тихий белый пейзаж.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <div>
-              <h4>До центра недалеко</h4>
-              <p>До метро минут 10-15 пешком. На машине до центра — 15 минут без пробок. Не самый центр, но и не окраина.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-            <div>
-              <h4>Кафешки на месте</h4>
-              <p>Кофейня, ресторан, фитнес, супермаркет — всё на территории комплекса. За кофе не надо никуда ехать.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- CHAPTER I: HISTORY & SOUL -->
+  <section id="ch1" class="scrolly-section">
+    <div class="scrolly-sticky">
+      <img src="assets/manufactura/exterior.webp" alt="Фасад Мануфактуры" loading="lazy">
     </div>
-  </section>
-
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="container">
-      <div class="reveal" style="text-align: center;">
-        <span class="section-label">Визуальный обзор</span>
-        <h2 class="section-title" style="display: inline-block;">Галерея объекта</h2>
-      </div>
-      <div class="gallery-grid reveal">
-        <!-- Video (Hero item, spans 2 rows) -->
-        <div class="gallery-item video-item" data-src="assets/manufactura/video.mp4" data-type="video">
-          <video src="assets/manufactura/video.mp4" autoplay muted loop playsinline></video>
-          <div class="overlay"><span>Видеоэкскурсия по комплексу</span></div>
-          <div class="play-icon-overlay">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-
-        <!-- Exterior Front (Landscape) -->
-        <div class="gallery-item" data-src="assets/manufactura/exterior.webp" data-type="image">
-          <img src="assets/manufactura/exterior.webp" loading="lazy" alt="Фасад IT-Park Manufactura">
-          <div class="overlay"><span>Фасад IT-Park Manufactura</span></div>
-        </div>
-
-        <!-- Exterior Closeup (Landscape) -->
-        <div class="gallery-item" data-src="assets/manufactura/closeup.webp" data-type="image">
-          <img src="assets/manufactura/closeup.webp" loading="lazy" alt="Архитектурные детали фасада">
-          <div class="overlay"><span>Детали фасада и реновации</span></div>
-        </div>
-
-        <!-- Exterior Panorama (Wide, spans 2 columns) -->
-        <div class="gallery-item wide" data-src="assets/manufactura/panorama.webp" data-type="image">
-          <img src="assets/manufactura/panorama.webp" loading="lazy" alt="Вид на комплекс с набережной">
-          <div class="overlay"><span>Вид на комплекс со стороны набережной</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOCATION -->
-  <section id="location">
-    <div class="container">
-      <div class="reveal" style="text-align: center;">
-        <span class="section-label">Где это?</span>
-        <h2 class="section-title" style="display: inline-block;">Расположение</h2>
-        <p style="max-width: 600px; margin: 0 auto; color: var(--clr-text-muted);">Харьков, улица Юлия Чигирина, 13 — идеальное сочетание тихой набережной и близости к ключевой деловой инфраструктуре города.</p>
-      </div>
-      <div class="location-cards">
-        <div class="location-card reveal">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg>
-          <h4>Добраться несложно</h4>
-          <p>Маршрутки ходят часто, до метро минут 10. На машине до центра — 15 минут без пробок.</p>
-        </div>
-        <div class="location-card reveal">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          <h4>Набережная рядом</h4>
-          <p>Река Харьков в двух шагах. Утренняя пробежка вдоль воды или вечерняя прогулка — без толпы и шума.</p>
-        </div>
-        <div class="location-card reveal">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <h4>Для кого это?</h4>
-          <p>Если вы айтишник, фрилансер или просто любите лофт-эстетику — это ваш вариант. Цена выше панельки, но вы платите за высокие потолки и стены XIX века.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DYNAMIC LISTINGS -->
-  <section id="listings" style="display: none;">
-    <div class="container">
-      <div class="reveal" style="text-align: center;">
-        <span class="section-label">Дополнительно</span>
-        <h2 class="section-title" style="display: inline-block;">Другие предложения в этом комплексе</h2>
-      </div>
-      <div id="listingsGrid" class="gallery-grid reveal"></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container contact-grid">
-      <div class="reveal-left">
-        <span class="section-label">Поговорим?</span>
-        <h2 class="section-title">Давайте созвонимся</h2>
-        <p style="color: var(--clr-text-muted); margin-bottom: 40px; font-weight: 300;">Интересно? Напишите или позвоните — покажу всё на месте, расскажу про планировки и цены. Без давления, без «акция только сегодня».</p>
-        
-        <div class="contact-info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          <div>
-            <h4>Позвоните или напишите</h4>
-            <p><a href="tel:+380996301880">+38 099 630 18 80</a></p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <div>
-            <h4>Адрес</h4>
-            <p>Украина, Харьков, улица Юлия Чигирина, 13</p>
-          </div>
+    <div class="scrolly-content container">
+      <div class="scrolly-step reveal">
+        <div class="scrolly-card">
+          <span class="section-label">Глава I</span>
+          <h3>История одной мельницы</h3>
+          <p>В 1886 году здесь построили мукомольную мельницу. Она работала больше ста лет, пережила две войны, а потом заброшенную территорию выкупила компания «Строй Сити» и сделала то, что в Европе делают давно — превратила промышленное здание в жилой комплекс.<br><br>Кирпичные стены оставили как есть, добавили панорамные окна и современные коммуникации.</p>
         </div>
       </div>
       
-        <div class="messenger-buttons">
-          <a href="tel:+380996301880" class="btn-messenger btn-ph">+38 099 630 18 80</a>
-          <a href="https://t.me/+380996301880" class="btn-messenger btn-tg" target="_blank">Telegram</a>
-          <a href="https://wa.me/380996301880" class="btn-messenger btn-wa" target="_blank">WhatsApp</a>
-          <a href="viber://chat?number=380996301880" class="btn-messenger btn-vi">Viber</a>
+      <div class="scrolly-step reveal">
+        <div class="scrolly-card">
+          <h3>Живёшь + работаешь</h3>
+          <p>Идея простая: живёшь и работаешь в одном месте. На первых этажах — коворкинги и IT-офисы, наверху — квартиры-лофты. Утренний «комьют» — это лифт. Экономишь 2 часа в день. Для айтишников и фрилансеров — мечта, если честно.</p>
         </div>
-      <div class="reveal-right">
-        <form class="contact-form" id="contactForm">
-          <div class="form-group"><input type="text" placeholder="Ваше имя" required></div>
-          <div class="form-group"><input type="tel" placeholder="Номер телефона" required></div>
-          <div class="form-group"><input type="email" placeholder="Электронная почта (необязательно)"></div>
-          <div class="form-group"><textarea placeholder="Ваши вопросы или комментарии"></textarea></div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить запрос</button>
-        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER II: ENVIRONMENT -->
+  <section id="ch2" class="scrolly-section">
+    <div class="scrolly-sticky">
+      <img src="assets/manufactura/panorama.webp" alt="Панорама и река" loading="lazy">
+    </div>
+    <div class="scrolly-content container">
+      <div class="scrolly-step reveal">
+        <div class="scrolly-card">
+          <span class="section-label">Глава II</span>
+          <h3>Река за окном</h3>
+          <p>Окна выходят на реку Харьков. Это настоящие стены мельницы, которым 140 лет — такое не подделаешь. Летом — зелень и утки за окном, зимой — тихий белый пейзаж. В городе такое редкость.<br><br>
+          Кофейня, ресторан, фитнес, супермаркет — всё на территории комплекса. За кофе не надо никуда ехать.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER III: DETAILS & TARGET -->
+  <section id="ch3" class="scrolly-section">
+    <div class="scrolly-sticky">
+      <img src="assets/manufactura/closeup.webp" alt="Детали" loading="lazy">
+    </div>
+    <div class="scrolly-content container">
+      <div class="scrolly-step reveal">
+        <div class="scrolly-card" style="margin-left: auto;">
+          <span class="section-label">Глава III</span>
+          <h3>Для кого это?</h3>
+          <p>Если вы айтишник, фрилансер или просто любите лофт-эстетику — это ваш вариант. Цена выше панельки, но вы платите за высокие потолки, стены XIX века и комьюнити вокруг.<br><br>
+          До метро минут 10-15 пешком. На машине до центра — 15 минут без пробок. Не самый центр, но и не окраина.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EPILOGUE: CONTACT -->
+  <section id="epilogue" style="padding-top: 15vh; padding-bottom: 15vh; background: var(--clr-bg);">
+    <div class="container reveal">
+      <span class="section-label">Эпилог</span>
+      <h2 class="section-title">Давайте созвонимся</h2>
+      <p style="max-width: 600px;">Интересно? Напишите или позвоните — покажу всё на месте, расскажу про планировки и цены. Без давления, без «акция только сегодня».</p>
+      
+      <div class="editorial-contact-links">
+        <a href="tel:+380996301880" class="ed-link">
+          <span>Позвонить</span>
+          +38 099 630 18 80
+        </a>
+        <a href="https://t.me/realtor" target="_blank" class="ed-link">
+          <span>Написать</span>
+          Telegram
+        </a>
+        <a href="https://wa.me/380996301880" target="_blank" class="ed-link">
+          <span>Написать</span>
+          WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -270,32 +149,26 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p class="footer-copy">&copy; 2026 IT-Park Manufactura. Все права защищены.</p>
-      <a href="admin.html" class="footer-admin">Панель управления</a>
+      <div class="footer-copy">&copy; 2026 IT-Park Manufactura. Все права защищены.</div>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose">✕</button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">❮</button>
-    <button class="lightbox-nav lightbox-next" id="lightboxNext">❯</button>
-    <img id="lightboxImg" src="" loading="lazy" alt="" style="display: none;">
-    <video id="lightboxVideo" src="" controls playsinline style="display: none;"></video>
-  </div>
-
-  <!-- SCRIPTS -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
   <script src="js/core/i18n.js"></script>
   <script src="js/core/slider.js"></script>
   <script src="js/core/navigation.js"></script>
-  <script src="js/three-scene.js"></script>
-  <script src="js/gallery.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.initSliders) window.initSliders();
-    });
+  <script type="module">
+    import { initBuildingScene } from './js/scenes/manufactura-scene.js';
+    initBuildingScene('hero-canvas');
   </script>
 </body>
 </html>
