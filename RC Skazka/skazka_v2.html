@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="skazka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ЖК Сказка — Обзор квартиры</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css?v=9999">
+  <link rel="stylesheet" href="css/base.css?v=9999">
+  <link rel="stylesheet" href="css/components.css?v=9999">
+</head>
+<body>
+
+  <!-- THREE.JS CANVAS BACKGROUND -->
+  <canvas id="skazka-canvas" class="canvas-fixed"></canvas>
+
+  <!-- NAVIGATION HEADER -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="#prologue" class="nav-logo">ЖК Сказка <span>•</span> Обзор</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#prologue">Обзор</a>
+        <a href="#ch1">Характеристики</a>
+        <a href="#ch2">Район</a>
+        <a href="#ch3">Планировки</a>
+        <a href="#ch4">Галерея</a>
+        <a href="#epilogue">Контакты</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#prologue">Обзор</a>
+    <a href="#ch1">Характеристики</a>
+    <a href="#ch2">Район</a>
+    <a href="#ch3">Планировки</a>
+    <a href="#ch4">Галерея</a>
+    <a href="#epilogue">Контакты</a>
+  </div>
+
+  <!-- OVERVIEW / COVER (OPEN EDITORIAL V1 STYLE WITH UNBOXED QUOTE ASIDE) -->
+  <section id="prologue" style="min-height: 100vh; position: relative; display: flex; align-items: flex-end; padding-top: 100px; padding-bottom: 70px;">
+    <div class="container" style="position: relative; z-index: 3; width: 100%;">
+      <div class="hero-grid">
+        
+        <!-- LEFT COLUMN: EDITORIAL CONTENT (UNBOXED) -->
+        <div>
+          <span class="chapter-badge"><span class="dot"></span> Архитектурный обзор • Харьков</span>
+          <h1 class="book-title" style="font-size: clamp(2.5rem, 4.8vw, 4.0rem); margin-top: 16px; margin-bottom: 20px; line-height: 1.15;">ЖК Сказка — Квартира на <em>Холодной Горе</em></h1>
+          <p class="book-lead" style="font-size: 1.08rem; max-width: 680px; margin-bottom: 32px; color: var(--clr-text-muted); font-weight: 300;">Новый кирпичный дом от компании «Жилстрой-1». Просторная двухкомнатная квартира без финишной отделки, расположенная в пяти минутах ходьбы от станции метро.</p>
+          
+          <div class="stats-grid">
+            <div>
+              <div style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 500; color: var(--clr-accent);">46.7 м²</div>
+              <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--clr-text-muted); margin-top: 4px;">Общая площадь</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 500; color: var(--clr-accent);">2.7 м</div>
+              <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--clr-text-muted); margin-top: 4px;">Высота потолков</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 500; color: var(--clr-accent);">2020</div>
+              <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--clr-text-muted); margin-top: 4px;">Год сдачи</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 500; color: var(--clr-accent);">5 мин</div>
+              <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--clr-text-muted); margin-top: 4px;">До метро</div>
+            </div>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#ch3" class="btn btn-primary">Дизайн-проект комнат</a>
+            <a href="#epilogue" class="btn btn-outline">Организовать просмотр</a>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: UNBOXED EDITORIAL ASIDE QUOTE -->
+        <div style="max-width: 360px;">
+          <div style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 2.2px; color: var(--clr-accent); margin-bottom: 12px; font-family: var(--font-body);">● АРХИТЕКТУРНЫЙ АКЦЕНТ</div>
+          <div style="font-family: var(--font-heading); font-size: 1.25rem; font-style: italic; color: var(--clr-text); line-height: 1.55; margin-bottom: 14px;">«Надежность 510-мм кирпичной кладки, тишина минераловатного утепления и 500 метров до метро — готовая основа для вашего ремонта.»</div>
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--clr-text-muted);">— Команда «Жилстрой-1»</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Прокрутите вниз</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: CONSTRUCTION & ENGINEERING -->
+  <section id="ch1" style="margin-top: -30px; position: relative; z-index: 2;">
+    <div class="container grid-2">
+      <div class="glass-panel" style="padding: 44px 40px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span class="chapter-badge">Технические параметры</span>
+          <h2 class="book-title" style="margin-top: 12px; margin-bottom: 16px;">Материалы и строительные технологии</h2>
+          <p class="book-paragraph">Здание возведено по кирпичной технологии из силикатного кирпича толщиной 510 мм. Кирпичные стены обладают высокой акустической плотностью и естественной теплоемкостью, аккумулируя комфортную температуру круглый год.</p>
+          <p class="book-paragraph">Снаружи фасад утеплен минеральной ватой 100 мм под защитной штукатуркой, что исключает мостики холода и экономит отопление.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--clr-border);">
+          <div>
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--clr-accent);">● Кладка 510 мм</div>
+            <div style="font-size: 0.76rem; color: var(--clr-text-muted); margin-top: 2px;">Высокая акустическая изоляция</div>
+          </div>
+          <div>
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--clr-accent);">● Фасад 100 мм</div>
+            <div style="font-size: 0.76rem; color: var(--clr-text-muted); margin-top: 2px;">Энергосберегающая минвата</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--clr-border); box-shadow: var(--shadow);">
+          <img src="assets/exterior_2.webp" alt="ЖК Сказка фасад" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNBOXED ART-STYLE EDITORIAL CALLOUT BETWEEN SECTION 1 & 2 -->
+  <div style="padding: 60px 0; position: relative; z-index: 2;">
+    <div class="container" style="text-align: center; max-width: 860px; margin: 0 auto;">
+      <span style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 3px; color: var(--clr-accent);">— ЭКСПЕРТНОЕ МНЕНИЕ —</span>
+      <h3 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.2rem); font-style: italic; color: var(--clr-text); line-height: 1.45; margin-top: 16px; margin-bottom: 16px;">
+        «Капитальный силикатный кирпич аккумулирует тепло зимой и убирает летний зной. Это надежный актив, сохраняющий свою ценность десятилетиями.»
+      </h3>
+      <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--clr-text-muted);">Инженерно-строительный отдел «Жилстрой-1»</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: LOCATION & INFRASTRUCTURE -->
+  <section id="ch2" style="position: relative; z-index: 2;">
+    <div class="container grid-2 grid-reverse">
+      <div class="glass-panel" style="padding: 44px 40px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span class="chapter-badge">Инфраструктура</span>
+          <h2 class="book-title" style="margin-top: 12px; margin-bottom: 16px;">Район и транспортная доступность</h2>
+          <p class="book-paragraph">Станция метро «Холодная Гора» находится в 500 метрах от жилого комплекса (5 минут пешком). Поездка до центральной части Харькова занимает 10–12 минут на метро или 15 минут на автомобиле.</p>
+          <p class="book-paragraph">В шаговой доступности находятся супермаркеты «Класс» и «Рост», продовольственный рынок, банки, аптеки, школы №126, №108 и детские сады.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--clr-border);">
+          <div>
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--clr-accent);">● Метро 500 м</div>
+            <div style="font-size: 0.76rem; color: var(--clr-text-muted); margin-top: 2px;">5 минут пешим шагом</div>
+          </div>
+          <div>
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--clr-accent);">● Инфраструктура</div>
+            <div style="font-size: 0.76rem; color: var(--clr-text-muted); margin-top: 2px;">Рынок, «Класс» и «Рост» рядом</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--clr-border); box-shadow: var(--shadow);">
+          <img src="assets/exterior_3.webp" alt="Двор ЖК Сказка" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNBOXED ART-STYLE EDITORIAL CALLOUT BETWEEN SECTION 2 & 3 -->
+  <div style="padding: 60px 0; position: relative; z-index: 2;">
+    <div class="container" style="text-align: center; max-width: 860px; margin: 0 auto;">
+      <span style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 3px; color: var(--clr-accent);">— ГОРОДСКАЯ СРЕДА —</span>
+      <h3 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.2rem); font-style: italic; color: var(--clr-text); line-height: 1.45; margin-top: 16px; margin-bottom: 16px;">
+        «5 минут пешком до метро 'Холодная Гора' — это свободное время каждое утро и абсолютная независимость от городских пробок.»
+      </h3>
+      <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--clr-text-muted);">Транспортная аналитика Харькова</div>
+    </div>
+  </div>
+
+  <div class="editorial-divider"></div>
+
+  <!-- INTERACTIVE TABBED ROOM SHOWCASE (UNBOXED CLEAN HEADER) -->
+  <section id="ch3">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <h2 class="book-title" style="font-size: clamp(2.2rem, 4vw, 3.2rem);">Трансформация помещений</h2>
+        <p class="book-lead" style="font-size: 1.0rem; color: var(--clr-text-muted); margin-top: 8px;">Выберите комнату и потяните ползунок, чтобы оценить разницу между реальной черновой отделкой и предложенным дизайн-проектом.</p>
+      </div>
+
+      <!-- ROOM TAB BUTTONS -->
+      <div class="room-tabs">
+        <button class="room-tab-btn active" data-target="#room-pane-1">01. Гостиная (18.2 м²)</button>
+        <button class="room-tab-btn" data-target="#room-pane-2">02. Кухня (10.5 м²)</button>
+        <button class="room-tab-btn" data-target="#room-pane-3">03. Спальня (11.4 м²)</button>
+      </div>
+
+      <!-- ROOM TAB PANES -->
+      <div class="room-panes">
+        
+        <!-- PANE 1: LIVING ROOM -->
+        <div class="room-pane active" id="room-pane-1">
+          <div class="grid-2">
+            <div class="glass-panel" style="padding: 44px 40px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h3 class="book-title" style="font-size: 2.4rem; margin-bottom: 16px;">Гостиная — 18.2 м²</h3>
+                <p class="book-paragraph">Просторное прямоугольное помещение. Проект предусматривает зонирование на диванную группу, ТВ-зону и рабочий стол у окна.</p>
+              </div>
+              <div style="display: flex; gap: 40px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--clr-border);">
+                <div><span style="font-size: 1.8rem; font-weight: 600; color: var(--clr-accent);">18.2 м²</span><br><span style="font-size: 0.75rem; color: var(--clr-text-muted); text-transform: uppercase;">Площадь</span></div>
+                <div><span style="font-size: 1.8rem; font-weight: 600; color: var(--clr-accent);">2.7 м</span><br><span style="font-size: 0.75rem; color: var(--clr-text-muted); text-transform: uppercase;">Потолок</span></div>
+                <div><span style="font-size: 1.8rem; font-weight: 600; color: var(--clr-accent);">Двор</span><br><span style="font-size: 0.75rem; color: var(--clr-text-muted); text-transform: uppercase;">Окна</span></div>
+              </div>
+            </div>
+            <div class="comparison-slider">
+              <div class="slider-img-before">
+                <img class="slider-img-bg" src="assets/rooms/room1_real.webp" alt="">
+                <img class="slider-img-fg" src="assets/rooms/room1_real.webp" alt="Гостиная черновая">
+              </div>
+              <div class="slider-img-after">
+                <img class="slider-img-bg" src="assets/rooms/room1_render.webp" alt="">
+                <img class="slider-img-fg" src="assets/rooms/room1_render.webp" alt="Гостиная проект">
+              </div>
+              <div class="slider-handle"></div>
+              <span class="slider-label slider-label-before">Черновая отделка</span>
+              <span class="slider-label slider-label-after">Дизайн-проект</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 2: KITCHEN -->
+        <div class="room-pane" id="room-pane-2">
+          <div class="grid-2">
+            <div class="glass-panel" style="padding: 44px 40px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h3 class="book-title" style="font-size: 2.4rem; margin-bottom: 16px;">Кухня — 10.5 м²</h3>
+                <p class="book-paragraph">Площадь позволяет свободно разместить встроенную кухонную мебель с техникой и обеденный стол на 4–6 персон.</p>
+              </div>
+              <div style="display: flex; gap: 40px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--clr-border);">
+                <div><span style="font-size: 1.8rem; font-weight: 600; color: var(--clr-accent);">10.5 м²</span><br><span style="font-size: 0.75rem; color: var(--clr-text-muted); text-transform: uppercase;">Площадь</span></div>
+                <div><span style="font-size: 1.8rem; font-weight: 600; color: var(--clr-accent);">Электро</span><br><span style="font-size: 0.75rem; color: var(--clr-text-muted); text-transform: uppercase;">Коммуникации</span></div>
+              </div>
+            </div>
+            <div class="comparison-slider">
+              <div class="slider-img-before">
+                <img class="slider-img-bg" src="assets/rooms/kitchen_real.webp" alt="">
+                <img class="slider-img-fg" src="assets/rooms/kitchen_real.webp" alt="Кухня черновая">
+              </div>
+              <div class="slider-img-after">
+                <img class="slider-img-bg" src="assets/rooms/kitchen_render.webp" alt="">
+                <img class="slider-img-fg" src="assets/rooms/kitchen_render.webp" alt="Кухня проект">
+              </div>
+              <div class="slider-handle"></div>
+              <span class="slider-label slider-label-before">Черновая отделка</span>
+              <span class="slider-label slider-label-after">Дизайн-проект</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 3: BEDROOM -->
+        <div class="room-pane" id="room-pane-3">
+          <div class="grid-2">
+            <div class="glass-panel" style="padding: 44px 40px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h3 class="book-title" style="font-size: 2.4rem; margin-bottom: 16px;">Спальня — 11.4 м²</h3>
+                <p class="book-paragraph">Изолированная тихая комната. В дизайн-проекте предусмотрено место для двуспальной кровати и вместительного шкафа-купе.</p>
+              </div>
+              <div style="display: flex; gap: 40px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--clr-border);">
+                <div><span style="font-size: 1.8rem; font-weight: 600; color: var(--clr-accent);">11.4 м²</span><br><span style="font-size: 0.75rem; color: var(--clr-text-muted); text-transform: uppercase;">Площадь</span></div>
+                <div><span style="font-size: 1.8rem; font-weight: 600; color: var(--clr-accent);">Тихий двор</span><br><span style="font-size: 0.75rem; color: var(--clr-text-muted); text-transform: uppercase;">Шумоизоляция</span></div>
+              </div>
+            </div>
+            <div class="comparison-slider">
+              <div class="slider-img-before">
+                <img class="slider-img-bg" src="assets/rooms/bedroom_real.webp" alt="">
+                <img class="slider-img-fg" src="assets/rooms/bedroom_real.webp" alt="Спальня черновая">
+              </div>
+              <div class="slider-img-after">
+                <img class="slider-img-bg" src="assets/rooms/bedroom_render.webp" alt="">
+                <img class="slider-img-fg" src="assets/rooms/bedroom_render.webp" alt="Спальня проект">
+              </div>
+              <div class="slider-handle"></div>
+              <span class="slider-label slider-label-before">Черновая отделка</span>
+              <span class="slider-label slider-label-after">Дизайн-проект</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="editorial-divider"></div>
+
+  <!-- GALLERY -->
+  <section id="ch4">
+    <div class="container">
+      <div class="glass-panel" style="text-align: center; margin-bottom: 48px; margin-left: auto; margin-right: auto; padding: 48px 40px;">
+        <span class="chapter-badge"><span class="dot"></span> Медиатека</span>
+        <h2 class="book-title" style="margin-top: 12px;">Фотоматериалы и планировочное решение</h2>
+        <p class="book-paragraph">Нажмите на любой объект для полноэкранного просмотра.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item video-item" data-src="assets/video_1.mp4" data-type="video">
+          <video src="assets/video_1.mp4" autoplay muted loop playsinline></video>
+          <div class="overlay"><span>Видеооблет комплекса</span></div>
+        </div>
+        <!-- Row 1: Exterior Photos -->
+        <div class="gallery-item" data-src="assets/exterior_3.webp" data-type="image">
+          <img src="assets/exterior_3.webp" loading="lazy" alt="Придворовая территория">
+          <div class="overlay"><span>Благоустроенный двор</span></div>
+        </div>
+        <div class="gallery-item" data-src="assets/exterior_1.webp" data-type="image">
+          <img src="assets/exterior_1.webp" loading="lazy" alt="Фасад дома">
+          <div class="overlay"><span>Фасад комплекса</span></div>
+        </div>
+        <!-- Row 2: Main Living Spaces -->
+        <div class="gallery-item" data-src="assets/rooms/room1_real.webp" data-type="image">
+          <img src="assets/rooms/room1_real.webp" loading="lazy" alt="Гостиная">
+          <div class="overlay"><span>Гостиная (18.2 м²)</span></div>
+        </div>
+        <div class="gallery-item" data-src="assets/rooms/kitchen_real.webp" data-type="image">
+          <img src="assets/rooms/kitchen_real.webp" loading="lazy" alt="Кухня">
+          <div class="overlay"><span>Кухня (10.5 м²)</span></div>
+        </div>
+        <!-- Row 3: Bedroom & Blueprint -->
+        <div class="gallery-item" data-src="assets/rooms/bedroom_real.webp" data-type="image">
+          <img src="assets/rooms/bedroom_real.webp" loading="lazy" alt="Спальня">
+          <div class="overlay"><span>Спальня (11.4 м²)</span></div>
+        </div>
+        <div class="gallery-item contain-img" data-src="assets/floorplan.webp" data-type="image">
+          <img src="assets/floorplan.webp" loading="lazy" alt="Планировка">
+          <div class="overlay"><span>План квартиры</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="epilogue">
+    <div class="container">
+      <div class="glass-panel" style="text-align: center; padding: 64px 48px;">
+        <span class="chapter-badge">Связь</span>
+        <h2 class="book-title" style="margin-top: 16px; margin-bottom: 20px;">Организация просмотра</h2>
+        <p class="book-lead">Чтобы получить техническую документацию, уточнить условия покупки или договориться о личной встрече на объекте, свяжитесь с нами удобным способом:</p>
+
+        <div class="messenger-buttons" style="justify-content: center; margin-top: 40px;">
+          <a href="tel:+380502779014" class="btn-messenger btn-ph">+38 (050) 277-90-14</a>
+          <a href="https://t.me/+380502779014" target="_blank" class="btn-messenger btn-tg">Написать в Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img id="lightboxImg" src="" alt="" style="display: none;">
+    <video id="lightboxVideo" src="" controls playsinline style="display: none;"></video>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/scenes/skazka-scene.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Menu Toggle
+      const burger = document.getElementById('burger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (burger && mobileMenu) {
+        burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        });
+      }
+
+      // Room Tab Controller
+      const tabBtns = document.querySelectorAll('.room-tab-btn');
+      const tabPanes = document.querySelectorAll('.room-pane');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-target');
+          
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabPanes.forEach(p => p.classList.remove('active'));
+
+          btn.classList.add('active');
+          const activePane = document.querySelector(targetId);
+          if (activePane) activePane.classList.add('active');
+        });
+      });
+
+      // Synchronized Comparison Sliders
+      const sliders = document.querySelectorAll('.comparison-slider');
+      let isInteracted = false;
+      let hintAnimation = null;
+
+      function setAllSlidersPercentage(percentage) {
+        sliders.forEach(slider => {
+          const handle = slider.querySelector('.slider-handle');
+          const afterImg = slider.querySelector('.slider-img-after');
+          if (!handle || !afterImg) return;
+          handle.style.left = percentage + '%';
+          afterImg.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
+        });
+      }
+
+      // Default right start
+      setAllSlidersPercentage(100);
+
+      // GSAP Hint Animation on Scroll
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.create({
+        trigger: "#ch3",
+        start: "top 70%",
+        once: true,
+        onEnter: () => {
+          if (!isInteracted) {
+            let proxy = { percent: 100 };
+            hintAnimation = gsap.to(proxy, {
+              percent: 60,
+              duration: 1.5,
+              yoyo: true,
+              repeat: 1,
+              ease: "power2.inOut",
+              delay: 0.5,
+              onUpdate: () => {
+                if (!isInteracted) setAllSlidersPercentage(proxy.percent);
+              }
+            });
+          }
+        }
+      });
+
+      sliders.forEach(slider => {
+        let isDragging = false;
+        const handleDrag = (clientX) => {
+          if (!isInteracted) {
+            isInteracted = true;
+            if (hintAnimation) hintAnimation.kill();
+          }
+          const rect = slider.getBoundingClientRect();
+          let posX = clientX - rect.left;
+          if (posX < 0) posX = 0;
+          if (posX > rect.width) posX = rect.width;
+          const percentage = (posX / rect.width) * 100;
+          setAllSlidersPercentage(percentage);
+        };
+
+        slider.addEventListener('mousedown', (e) => { isDragging = true; handleDrag(e.clientX); });
+        window.addEventListener('mousemove', (e) => { if (isDragging) handleDrag(e.clientX); });
+        window.addEventListener('mouseup', () => isDragging = false);
+
+        slider.addEventListener('touchstart', (e) => { isDragging = true; handleDrag(e.touches[0].clientX); });
+        window.addEventListener('touchmove', (e) => { if (isDragging) handleDrag(e.touches[0].clientX); });
+        window.addEventListener('touchend', () => isDragging = false);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,71 +1,23 @@
 /**
- * Scroll-driven animations with GSAP and Lenis
+ * Scroll-driven animations — IntersectionObserver based reveals + counter animation
  */
 (function () {
-  // Initialize Lenis for Smooth Scrolling
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smooth: true,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  // Sync GSAP with Lenis
-  if (typeof gsap !== \'undefined\' && typeof ScrollTrigger !== \'undefined\') {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    // Simple fade up for .reveal elements
-    gsap.utils.toArray('.reveal, .reveal-left, .reveal-right').forEach(el => {
-      gsap.fromTo(el, 
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          }
-        }
-      );
+  /* --- Reveal on scroll --- */
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Remove will-change after animation completes to free GPU memory
+        setTimeout(() => { entry.target.style.willChange = 'auto'; }, 1000);
+        revealObserver.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-    // Parallax on images
-    gsap.utils.toArray('.gallery-item img').forEach(img => {
-      gsap.to(img, {
-        yPercent: 15,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: img.parentElement,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true
-        }
-      });
-    });
+  revealEls.forEach(el => revealObserver.observe(el));
 
-  } else {
-    // Fallback if GSAP is not loaded
-    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => revealObserver.observe(el));
-  }
-
-  // Counter animation
+  /* --- Counter animation --- */
   const counters = document.querySelectorAll('[data-count]');
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -74,9 +26,10 @@
         const target = parseInt(el.dataset.count);
         const duration = 1800;
         const start = performance.now();
+
         function update(now) {
           const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
+          const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
           el.textContent = Math.round(eased * target);
           if (progress < 1) requestAnimationFrame(update);
         }
@@ -85,5 +38,40 @@
       }
     });
   }, { threshold: 0.5 });
+
   counters.forEach(el => counterObserver.observe(el));
+
+  /* --- Staggered children animation for cards --- */
+  const staggerContainers = document.querySelectorAll('.location-cards, .about-features');
+  const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const children = entry.target.children;
+        Array.from(children).forEach((child, i) => {
+          child.style.transition = `opacity 0.5s ${i * 0.1}s, transform 0.5s ${i * 0.1}s`;
+          child.style.opacity = '0';
+          child.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            child.style.opacity = '1';
+            child.style.transform = 'translateY(0)';
+          }, 50);
+        });
+        staggerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  staggerContainers.forEach(el => staggerObserver.observe(el));
+
+  /* --- Parallax effect on about image --- */
+  const aboutImg = document.getElementById('aboutImg');
+  if (aboutImg) {
+    window.addEventListener('scroll', () => {
+      const rect = aboutImg.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        aboutImg.style.transform = `scale(1.05) translateY(${(progress - 0.5) * -20}px)`;
+      }
+    }, { passive: true });
+  }
 })();

@@ -1,0 +1,12 @@
+/* ===== DESIGN TOKENS & COLOR SYSTEM ===== */
+:root {
+  /* GLOBAL FONTS */
+  --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* TRANSITIONS & SHADOWS */
+  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+}

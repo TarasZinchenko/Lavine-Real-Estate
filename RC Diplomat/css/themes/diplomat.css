@@ -1,0 +1,17 @@
+/* ===== THEME: DIPLOMAT — MODERN DARK =====
+   A sleek, ultra-premium dark theme replacing the legacy espresso/bronze.
+   Vantablack/slate background, crisp white typography, and subtle silver/champagne accents.
+   Designed for maximum contrast and high-end tech/architectural aesthetic. */
+[data-theme="diplomat"] {
+  --clr-bg: #0A0A0A; /* Deep slate / near black */
+  --clr-surface: #141414; /* Slightly lighter slate */
+  --clr-surface-hover: #1E1E1E; /* Hover state */
+  --clr-accent: #E2E2E2; /* Crisp white-silver for strong accents */
+  --clr-accent-light: #FFFFFF; /* Pure white */
+  --clr-border: #2A2A2A; /* Subtle neutral borders */
+  --clr-text: #FFFFFF; /* Pure white for maximum contrast */
+  --clr-text-muted: #888888; /* Neutral grey for muted text */
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  --gold-glow: 0 0 35px rgba(255, 255, 255, 0.15); /* White/silver glow */
+  --glass-bg: linear-gradient(145deg, rgba(20, 20, 20, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%);
+}

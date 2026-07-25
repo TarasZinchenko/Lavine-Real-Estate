@@ -1,0 +1,7 @@
+{
+  "name": "skazka-kharkiv",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/skazka_v2_standalone.html" }
+  ]
+}
