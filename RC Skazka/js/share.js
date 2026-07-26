@@ -61,7 +61,7 @@ const EMBEDDED_LISTING_DATA = null;
 
     // WhatsApp Message
     const waText = `Здравствуйте! Меня заинтересовала квартира: ${data.title} (${data.price ? '$'+data.price : ''})`;
-    document.getElementById('waLink').href = `https://wa.me/380996301880?text=${encodeURIComponent(waText)}`;
+    document.getElementById('waLink').href = `https://wa.me/380502779014?text=${encodeURIComponent(waText)}`;
 
     // Show content
     mainContent.style.display = 'block';

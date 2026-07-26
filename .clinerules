@@ -22,5 +22,15 @@
 - Handles must be minimal (arrows-only visual, no heavy circle background) with a generous invisible touch target (minimum 44×44px, ideally 48×48px).
 - Default position: 100% (before image fully visible) with an entry slide hint animation (e.g. sliding to 65% then settling at 80% once per session).
 
-## 5. Handoff & Recreation
+## 5. Premium Editorial Storytelling & Layout
+- **Storytelling over Specs:** Properties must be presented as a narrative story, not just a technical spec sheet. Use editorial, magazine-style layouts with narrative gaps and expert opinion callouts.
+- **Unboxed Floating Text:** Hero quotes, expert opinions, and narrative interludes should float naturally on the background (unboxed) rather than being confined to heavy glass panels. This creates an airy, premium feel.
+- **1:1 Equalized Heights:** When a text card sits next to an image (e.g., a 4:3 image), the text card must equal the image's height perfectly to maintain a strict, beautiful architectural grid.
+- **Minimalist Headings:** Avoid redundant words like "Глава" (Chapter) in UI badges. Use clean, professional badges (e.g., "Технические параметры", "Локация").
+
+## 6. Standalone Bundling & Delivery
+- **Zero-Dependency Sharing:** For final delivery to clients via messengers, the property page must be bundled into a single `.html` file.
+- All CSS, JS, and critical images must be inlined (Base64 for small assets) so the client can open it anywhere, offline, with zero loading latency.
+
+## 7. Handoff & Recreation
 - Document all workflows in detail. If a new property is introduced, provide a clear checklist of how to adapt the styles, themes, assets, and scenes to it without breaking cohesiveness.

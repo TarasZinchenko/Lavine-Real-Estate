@@ -1,12 +1,18 @@
-# Backup and build files
-_backup/
+# Build & Deploy Caches
+.vercel/
+diplomat-kharkiv/
 node_modules/
 *.zip
+_backup/
+archive_v1/
 
-# OS files
+# System & OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# IDE
+# IDE Settings
 .vscode/
 .idea/
+*.suo
+*.user

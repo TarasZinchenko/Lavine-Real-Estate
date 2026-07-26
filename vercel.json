@@ -1,0 +1,8 @@
+{
+  "name": "papa-realtor-portfolio",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/RC Skazka/skazka_v2_standalone.html" },
+    { "source": "/skazka", "destination": "/RC Skazka/skazka_v2_standalone.html" }
+  ]
+}

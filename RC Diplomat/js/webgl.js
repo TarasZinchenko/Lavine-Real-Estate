@@ -9,18 +9,18 @@ window.GL = (() => {
   const GOLD_L = new THREE.Color(0xB8860B); // Dark golden rod / bronze
 
   const GALLERY = [
-    { key: 'assets/ai_real_facade_1784983943883.jpg',  title: 'Фасад',        cap: 'Монолитный каркас, кирпич, двор без машин' },
-    { key: 'assets/photo_17_2026-07-24_13-12-21.jpg', title: 'Лобби',        cap: 'Ресепшн, камень и дерево' },
-    { key: 'assets/ai_real_interior_open_1784983979624.jpg', title: 'Пространство', cap: 'Свободная планировка, несущие колонны' },
-    { key: 'assets/ai_real_interior_concrete_1784983999070.jpg', title: 'Свет',         cap: 'Высокие окна, бетон, тишина' },
-    { key: 'assets/ai_real_loggia_1784983953753.jpg',  title: 'Лоджия',       cap: 'Панорамное остекление, парк под ногами' },
-    { key: 'assets/video_tour_web.mp4', poster: 'assets/poster_tour.jpg', video: true,
+    { key: 'assets/real_facade_v3.jpg',  title: 'Фасад',        cap: 'Монолитный каркас, кирпич, двор без машин' },
+    { key: 'assets/real_lobby_v3.jpg', title: 'Лобби',        cap: 'Ресепшн, камень и дерево' },
+    { key: 'assets/real_interior_open_v3.jpg', title: 'Пространство', cap: 'Свободная планировка, несущие колонны' },
+    { key: 'assets/real_interior_concrete_v3.jpg', title: 'Свет',         cap: 'Высокие окна, бетон, тишина' },
+    { key: 'assets/real_loggia_v3.jpg',  title: 'Лоджия',       cap: 'Панорамное остекление, парк под ногами' },
+    { key: 'assets/video_tour_web.mp4', poster: 'assets/real_poster_tour_v3.jpg', video: true,
       title: 'Видеотур', cap: 'Прогулка по квартире за сорок секунд' },
-    { key: 'assets/ai_real_panorama_1784983961513.jpg', title: 'Панорама',     cap: 'Город до самого горизонта' },
-    { key: 'assets/ai_real_panorama_1784983961513.jpg',  title: 'Горизонт',     cap: 'Высокий этаж, открытый вид' },
-    { key: 'assets/video_exterior_web.mp4', poster: 'assets/poster_exterior.jpg', video: true,
+    { key: 'assets/real_panorama_v3.jpg', title: 'Панорама',     cap: 'Город до самого горизонта' },
+    { key: 'assets/real_panorama_v3.jpg',  title: 'Горизонт',     cap: 'Высокий этаж, открытый вид' },
+    { key: 'assets/video_exterior_web.mp4', poster: 'assets/real_poster_exterior_v3.jpg', video: true,
       title: 'Дом снаружи', cap: 'Архитектура квартала в движении' },
-    { key: 'assets/ai_real_interior_brick_1784983989437.jpg', title: 'Дипломат',     cap: 'Точка на карте Харькова' }
+    { key: 'assets/real_interior_brick_v3.jpg', title: 'Дипломат',     cap: 'Точка на карте Харькова' }
   ];
   const GAP = 5;          // z distance between gallery planes
   const FOCUS = 3.4;      // camera looks this far ahead
@@ -135,21 +135,21 @@ window.GL = (() => {
   }
 
   function makePlane(texture, aspect, i, item) {
-    const h = item.video ? (isMobile ? 2.0 : 2.7) : (isMobile ? 1.6 : 2.4);
+    const h = item.video ? (isMobile ? 1.8 : 2.7) : (isMobile ? 1.4 : 2.4);
     let w = h * aspect;
-    w = Math.min(w, isMobile ? 3.0 : 4.4);
+    w = Math.min(w, isMobile ? 2.4 : 4.4);
     const geo = new THREE.PlaneGeometry(w, h);
     coverUV(geo, aspect, w / h);
     const mat = new THREE.MeshBasicMaterial({
       map: texture, transparent: true, opacity: 0, side: THREE.DoubleSide
     });
     const mesh = new THREE.Mesh(geo, mat);
-    const xOffset = isMobile ? 0.6 : 1.75;
-    const x = item.video ? 0 : (i % 2 ? xOffset : -xOffset);
-    mesh.position.set(x, item.video ? 0 : (i % 2 ? -0.12 : 0.12), -i * GAP);
-    mesh.rotation.y = -x * 0.15;
+    const xOffset = isMobile ? 1.2 : 1.75;
+    const baseX = item.video ? 0 : (i % 2 ? xOffset : -xOffset);
+    mesh.position.set(baseX, item.video ? 0 : (i % 2 ? -0.12 : 0.12), -i * GAP);
+    mesh.rotation.y = -baseX * 0.15;
     galGroup.add(mesh);
-    return { mesh, z: -i * GAP, x, item, opacity: 0 };
+    return { mesh, z: -i * GAP, baseX, item, opacity: 0 };
   }
 
   function buildGallery() {
@@ -262,17 +262,25 @@ window.GL = (() => {
       for (let i = 0; i < items.length; i++) {
         const it = items[i];
         if (!it) continue;
-        const d = Math.abs(it.z - (galCam.position.z - FOCUS));
+        const rawD = it.z - (galCam.position.z - FOCUS);
+        const d = Math.abs(rawD);
         if (d < best) { best = d; nearest = i; }
         const targetO = Scroll.clamp(1 - d / 6.2, 0, 1);
         it.opacity += (targetO - it.opacity) * 0.12;
         it.mesh.material.opacity = it.opacity;
+        
+        // Sweep to center as we approach
+        const sweep = Scroll.clamp(rawD / (isMobile ? 3.0 : 4.0), 0, 1);
+        const targetX = it.baseX * (isMobile ? sweep * sweep : sweep);
+        it.mesh.position.x += (targetX - it.mesh.position.x) * 0.1;
+        it.mesh.rotation.y = -it.mesh.position.x * 0.15;
+
         if (it.item.videoEl) {
           if (it.opacity > 0.25 && it.item.videoEl.paused) it.item.videoEl.play().catch(() => {});
           else if (it.opacity <= 0.05 && !it.item.videoEl.paused) it.item.videoEl.pause();
         }
       }
-      const nx = items[nearest] ? items[nearest].x * 0.42 : 0;
+      const nx = items[nearest] ? items[nearest].mesh.position.x * 0.42 : 0;
       galCam.position.x += (nx + smouse.x * 0.35 - galCam.position.x) * 0.06;
       galCam.position.y += (smouse.y * 0.25 - galCam.position.y) * 0.06;
       galCam.lookAt(galCam.position.x * 0.6, 0, galCam.position.z - FOCUS * 2);

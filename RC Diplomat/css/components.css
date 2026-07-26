@@ -589,7 +589,7 @@ body.ready .scroll-cue { opacity: 1; }
 @media (max-width: 968px) {
   .nav-links, .nav-phone { display: none; }
   .burger { display: flex; }
-  .flythrough { height: 560vh; }
+  .flythrough { height: 1200vh; }
   .hstrip { height: 380vh; }
 }
 
@@ -603,7 +603,8 @@ body.ready .scroll-cue { opacity: 1; }
   .num-label { max-width: 16ch; font-size: 0.62rem; }
   .fly-ui { left: 6vw; right: 6vw; bottom: 6vh; max-width: none; }
   .fly-progress { width: 110px; }
-  .hcard img { height: 46vh; }
+  .hcard { width: 85vw; }
+  .hcard img { width: 100%; height: auto; }
   .plx-veil {
     background: linear-gradient(180deg, var(--clr-bg) 0%, rgba(20, 17, 15, 0.55) 30%, rgba(20, 17, 15, 0.78) 72%, var(--clr-bg) 100%);
   }

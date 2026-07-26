@@ -4,7 +4,8 @@
    progress 0..1 through their height. Sticky CSS does the pinning. */
 window.Scroll = (() => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const EASE = reduced ? 1 : 0.095;
+  const isMobile = window.matchMedia('(max-width: 900px)').matches;
+  const EASE = reduced ? 1 : (isMobile ? 0.12 : 0.095);
 
   let sy = 0;            // smoothed scroll
   let target = 0;        // real scroll
