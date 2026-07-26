@@ -1,106 +1,116 @@
-# 🏢 Lavine Real Estate — Interactive Web Experiences
+# Lavine Real Estate — Interactive Web Applications
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript ES6+](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Production--Ready-success?style=flat-square)
+![Stack](https://img.shields.io/badge/Stack-Vanilla_JS_%7C_Three.js_%7C_CSS3-informational?style=flat-square)
+![Deploy](https://img.shields.io/badge/Deployment-Vercel-black?style=flat-square&logo=vercel)
+![License](https://img.shields.io/badge/License-Proprietary-blue?style=flat-square)
 
-High-performance, visual-first interactive web applications built for premium residential real estate projects in Kharkiv by **Lavine**. Featuring custom 3D WebGL camera flythroughs, custom lerp-based inertial scroll engines, interactive before/after renovation sliders, and ultra-responsive mobile UX.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript ES6+](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+
+High-performance, visual-first interactive web applications engineered for luxury residential real estate developments in Kharkiv by **Lavine**. Featuring custom 3D WebGL camera flythroughs, proprietary lerp-based inertial scroll engines, interactive dual-state renovation sliders, and ultra-responsive touch controls.
 
 ---
 
-## 🌟 Featured Projects
+## Featured Projects
 
-### 1. 🏛️ RC Diplomat (ЖК «Дипломат»)
-> *Premium luxury residence overlooking Sarzhyn Yar park in Kharkiv.*
+### 1. RC Diplomat (ЖК «Дипломат»)
+> *Business-class luxury residence overlooking Sarzhyn Yar park.*
 
-* **Live Demo**: [https://diplomat-kharkiv.vercel.app](https://diplomat-kharkiv.vercel.app)
-* **Highlights**:
-  * **3D WebGL Flythrough**: Interactive Three.js tunnel gallery responding smoothly to user scroll position.
-  * **Custom Inertial Scroll Engine**: Smooth `lerp` physics engine balancing responsive touch gestures and momentum scrolling without touch-blocking glitches.
-  * **Photorealistic Imagery**: High-end zero-HDR natural raw lighting color grading with subtle film grain.
-  * **Interactive Panoramic Cinema**: Fullscreen image expand & dynamic caption synchronization.
+* **Production URL**: [https://diplomat-kharkiv.vercel.app](https://diplomat-kharkiv.vercel.app)
+* **Technical Highlights**:
+  * **3D WebGL Flythrough**: Interactive Three.js camera tunnel gallery projecting spatial architectural planes in 3D coordinate space.
+  * **Custom Inertial Scroll Engine**: Smooth `lerp` physics engine balancing responsive touch gestures and momentum scrolling without touch-intercept glitches.
+  * **Photorealistic Grading**: High-end zero-HDR natural raw lighting color profile with subtle film grain.
+  * **Interactive Panoramic View**: Dynamic full-screen expand and synchronized location captions.
 
 ![RC Diplomat Preview](docs/previews/diplomat_preview_v3.png)
 
 ---
 
-### 2. 🌲 RC Skazka (ЖК «Сказка»)
-> *Scandinavian-inspired eco-comfort residence surrounded by nature.*
+### 2. RC Skazka (ЖК «Сказка»)
+> *Scandinavian-inspired eco-comfort residential complex.*
 
-* **Live Demo**: [https://skazka-kharkiv.vercel.app](https://skazka-kharkiv.vercel.app)
-* **Highlights**:
-  * **Interactive Before/After Sliders**: Synchronized dual-state touch & drag slider comparing raw construction states with luxury interior renders.
-  * **Responsive Grid & Parallax**: Seamless layout adapting dynamically across high-DPI desktop screens and mobile viewports.
-  * **Multilingual Architecture**: Built-in `i18n` support for multi-language toggle.
+* **Production URL**: [https://skazka-kharkiv.vercel.app](https://skazka-kharkiv.vercel.app)
+* **Technical Highlights**:
+  * **Dual-State Renovation Sliders**: Synchronized interactive touch & drag slider comparing raw construction states with luxury interior renders.
+  * **Responsive Adaptive Layout**: Grid system adapting across ultra-wide desktop monitors and mobile viewports.
+  * **Multilingual System**: Built-in `i18n` translation module for localized content delivery.
 
 ![RC Skazka Preview](docs/previews/skazka_preview.png)
 
 ---
 
-## 📐 Project Architecture
+## Repository Architecture
 
 ```
 Lavine-Real-Estate/
-├── RC Diplomat/                    # High-End Luxury Residence Project
-│   ├── diplomat.html               # Main landing page structure
-│   ├── diplomat_standalone.html    # Inlined production bundle
+├── RC Diplomat/                    # Business-Class Residence Project
+│   ├── diplomat.html               # Main application document
+│   ├── diplomat_standalone.html    # Production bundled distribution
 │   ├── js/
-│   │   ├── scroll.js               # Custom momentum scroll lerp engine
+│   │   ├── scroll.js               # Proprietary momentum scroll lerp engine
 │   │   ├── webgl.js                # Three.js 3D flythrough scene & shaders
 │   │   ├── fx.js                   # Scroll triggers & DOM animation hooks
-│   │   └── main.js                 # Application initialization
+│   │   └── main.js                 # Application bootstrapper
 │   ├── css/
 │   │   ├── base.css                # Typography, global reset & media filters
-│   │   ├── components.css          # Gallery cards, sliders & layout grids
-│   │   └── themes/diplomat.css     # Luxury theme tokens
-│   ├── assets/                     # High-res photography & videos
-│   └── bundle_standalone.py        # Single-file bundler script
+│   │   ├── components.css          # Cards, sliders & layout grids
+│   │   └── themes/diplomat.css     # Brand design tokens
+│   ├── assets/                     # High-resolution photography & video assets
+│   └── bundle_standalone.py        # Single-file asset bundler
 │
 ├── RC Skazka/                      # Scandinavian Eco-Comfort Residence Project
-│   ├── index.html                  # Main landing page structure
-│   ├── skazka_v2.html              # Synchronized slider edition
+│   ├── index.html                  # Main application document
+│   ├── skazka_v2.html              # Synchronized slider layout
 │   ├── js/
-│   │   ├── core/slider.js          # Before/After interactive slider logic
-│   │   ├── core/i18n.js            # Translation system
-│   │   └── scenes/skazka-scene.js  # Ambient backdrop effects
-│   └── css/                        # Responsive Scandinavian design tokens
+│   │   ├── core/slider.js          # Interactive slider engine
+│   │   ├── core/i18n.js            # Internationalization system
+│   │   └── scenes/skazka-scene.js  # Ambient scene setup
+│   └── css/                        # Design tokens & responsive styles
 │
 └── docs/
-    └── previews/                   # Repository screenshots & media preview assets
+    └── previews/                   # Repository screenshots & documentation assets
 ```
 
 ---
 
-## ⚡ Technical Innovations
+## Core Engineering & Innovations
 
-### 🌀 Custom Smooth Scroll Engine (`js/scroll.js`)
-Instead of relying on heavy third-party libraries, **RC Diplomat** utilizes an optimized vanilla JavaScript scroll engine:
+### Custom Smooth Scroll Engine (`js/scroll.js`)
+To deliver native-level 60fps performance without heavy third-party dependencies, **RC Diplomat** employs a lightweight lerp scroll engine:
+
 $$\text{sy} \leftarrow \text{sy} + (\text{target} - \text{sy}) \times \text{EASE}$$
-* Evaluates dynamic acceleration vectors for natural velocity curves.
-* Automatically bypasses inertia on non-pinned native sections to preserve seamless mobile swipe gestures.
 
-### 🎨 Color & Visual Grading
-All generated imagery adheres to an authentic editorial photographic style:
+* Evaluates real-time velocity vectors for continuous acceleration curves.
+* Dynamically bypasses momentum smoothing on non-pinned native sections to eliminate swipe input lag on iOS and Android devices.
+
+### Editorial Visual & Color Pipeline
+Media assets undergo real-time CSS filter grading to maintain photographic consistency across screen types:
+
 `filter: saturate(1.25) sepia(0.10) hue-rotate(-5deg) contrast(1.05)`
 
 ---
 
-## 🚀 Local Development & Deployment
+## Local Execution & Deployment
 
 ### Running Locally
-No build step or Node server required! Simply open the `.html` files in any modern web browser:
+No build pipeline or Node server required. Open the HTML documents directly in any web browser:
+
 ```bash
-# Open RC Diplomat
+# Launch RC Diplomat
 start "RC Diplomat/diplomat.html"
 
-# Open RC Skazka
+# Launch RC Skazka
 start "RC Skazka/index.html"
 ```
 
 ### Production Bundling
-To compile the standalone single-file distribution for clients:
+To generate self-contained single-file HTML distributions for client presentation:
+
 ```bash
 cd "RC Diplomat"
 python bundle_standalone.py
@@ -108,5 +118,5 @@ python bundle_standalone.py
 
 ---
 
-## 📄 License & Credits
+## Corporate Ownership & License
 Developed by **Lavine Real Estate**. All rights reserved.
