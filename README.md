@@ -22,7 +22,7 @@ High-performance, visual-first interactive web applications built for premium re
   * **Photorealistic Imagery**: High-end zero-HDR natural raw lighting color grading with subtle film grain.
   * **Interactive Panoramic Cinema**: Fullscreen image expand & dynamic caption synchronization.
 
-![RC Diplomat Preview](docs/previews/diplomat_preview.png)
+![RC Diplomat Preview](docs/previews/diplomat_preview_v2.png)
 
 ---
 
